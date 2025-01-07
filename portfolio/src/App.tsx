@@ -1,13 +1,18 @@
 import "./App.css";
+import Namecard from "./components/landing/namecard";
+import Navbar from "./components/landing/navbar";
 import Scene from "./components/landing/scene";
 
 function App() {
   return (
-    <div className="flex flex-row bg-blue-300 w-screen h-screen">
+    <div className="flex flex-row w-screen h-screen">
       <div className="flex-1">
         <Scene />
       </div>
-      <div className="flex-1 bg-red-50">test</div>
+      <div className="flex-1 flex flex-col justify-center items-center">
+        <Namecard />
+        <Navbar />
+      </div>
     </div>
   );
 }
