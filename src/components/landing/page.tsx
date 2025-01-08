@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { useEffect, useState } from "react";
 import { useShallow } from "zustand/react/shallow";
 import { Page, PageStore, usePageStore } from "../../stores/page.store";
 import AboutPage from "../about/page";
@@ -19,11 +20,18 @@ const pages = [
 ];
 
 export default function LandingPage() {
+  const [showPages, setShowPages] = useState(false);
   const { page } = usePageStore(
     useShallow((state: PageStore) => ({
       page: state.page,
     }))
   );
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShowPages(true);
+    }, 1800);
+  });
 
   return (
     <div className="flex flex-row w-screen h-screen font-poppins text-white">
@@ -35,7 +43,7 @@ export default function LandingPage() {
           <Namecard />
           <Navbar />
         </div>
-        {pages.find((item) => item.page === page)?.component}
+        {showPages && pages.find((item) => item.page === page)?.component}
       </motion.div>
     </div>
   );
