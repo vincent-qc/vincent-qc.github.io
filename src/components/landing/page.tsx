@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import usePageStore, { PageStore } from "../../stores/page.store";
+import { Page, PageStore, usePageStore } from "../../stores/page.store";
 import AboutPage from "../about/page";
 import Scene from "../scenes/scene";
 import Namecard from "./namecard";
