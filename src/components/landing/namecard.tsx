@@ -16,11 +16,11 @@ export default function Namecard() {
         },
         layout: {
           type: "spring",
-          duration: 1,
+          duration: 1.6,
         },
       }}
     >
-      <h1 className="text-[400%] text-white font-semibold">Vincent Qi</h1>
+      <h1 className="text-[400%] font-semibold">Vincent Qi</h1>
     </motion.div>
   );
 }

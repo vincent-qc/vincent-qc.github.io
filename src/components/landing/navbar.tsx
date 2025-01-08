@@ -1,13 +1,12 @@
 import { motion } from "motion/react";
 import { fadeUp } from "../../animations/fade";
+import { Page, PageStore, usePageStore } from "../../stores/page.store";
 
-const NavbarButton = ({
-  text,
-  setPage,
-}: {
-  text: string;
-  setPage: (page: string) => void;
-}) => {
+const NavbarButton = ({ text, page }: { text: string; page: Page }) => {
+  const { setPage } = usePageStore((state: PageStore) => ({
+    setPage: state.setPage,
+  }));
+
   return (
     <motion.div
       whileHover={{
@@ -16,42 +15,33 @@ const NavbarButton = ({
       transition={{
         duration: 0.2,
       }}
-      onClick={() => setPage(text)}
-      className="text-white text-lg border-b-[1px] border-transparent cursor-pointer"
+      style={{ borderBottom: "1px solid transparent" }}
+      onClick={() => setPage(page)}
+      className="text-lg cursor-pointer"
     >
       {text}
     </motion.div>
   );
 };
 
-export default function Navbar({
-  setPage,
-}: {
-  setPage: (page: string) => void;
-}) {
-  const { initial, animate } = fadeUp(20);
+export default function Navbar() {
+  const { initial, animate } = fadeUp(10);
   return (
     <motion.div
       layout
       initial={initial}
       animate={animate}
       transition={{
-        default: {
-          type: "spring",
-          duration: 1,
-          delay: 1,
-        },
-        layout: {
-          type: "spring",
-          duration: 1,
-        },
+        type: "spring",
+        duration: 1,
+        delay: 1,
       }}
-      className="flex flex-row justify-between gap-2"
+      className="flex flex-row justify-between gap-4 items-center w-fit"
     >
-      <NavbarButton setPage={setPage} text="about" />
-      <NavbarButton setPage={setPage} text="projects" />
-      <NavbarButton setPage={setPage} text="cv" />
-      <NavbarButton setPage={setPage} text="contact" />
+      <NavbarButton text="who am i" page={Page.ABOUT} />
+      <NavbarButton text="my work" page={Page.PROJECTS} />
+      <NavbarButton text="cv" page={Page.CV} />
+      <NavbarButton text="reach me" page={Page.CONTACT} />
     </motion.div>
   );
 }

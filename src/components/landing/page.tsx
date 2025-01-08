@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { useEffect, useState } from "react";
+import usePageStore, { PageStore } from "../../stores/page.store";
 import AboutPage from "../about/page";
 import Scene from "../scenes/scene";
 import Namecard from "./namecard";
@@ -7,33 +7,28 @@ import Navbar from "./navbar";
 
 const pages = [
   {
-    path: "landing",
-    component: null,
-  },
-  {
-    path: "about",
+    page: Page.ABOUT,
     component: <AboutPage />,
   },
 ];
 
 export default function LandingPage() {
-  const [page, setPage] = useState("landing");
-
-  useEffect(() => {
-    setTimeout(() => {
-      setPage("about");
-    }, 3000);
-  }, []);
+  const { page } = usePageStore((state: PageStore) => ({
+    page: state.page,
+    setPage: state.setPage,
+  }));
 
   return (
-    <div className="flex flex-row w-screen h-screen">
+    <div className="flex flex-row w-screen h-screen font-poppins text-white">
       <div className="w-[50%]">
         <Scene />
       </div>
-      <motion.div className="w-[50%] flex flex-col justify-center items-center py-16">
-        <Namecard />
-        <Navbar setPage={setPage} />
-        {pages.find((item) => item.path === page)?.component}
+      <motion.div className="w-[50%] flex flex-col p-24 gap-8">
+        <div className="flex flex-col items-end justify-center">
+          <Namecard />
+          <Navbar />
+        </div>
+        {pages.find((item) => item.page === page)?.component}
       </motion.div>
     </div>
   );
