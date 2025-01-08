@@ -48,8 +48,8 @@ export default function AboutPage() {
         retrieval models, and more.
         <br />
         <br />
-        As for fun, I enjoy to draw, paint, and experiment with computer
-        graphics and three.js (see left). And I may be a bit too picky about
+        As for fun, I enjoy drawing, building games, and experimenting with 3D
+        computer graphics (see left). I may also be slightly picky about
         frontend design and animations.
         <br />
         <br />

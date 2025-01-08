@@ -9,18 +9,12 @@ export default function Namecard() {
       initial={initial}
       animate={animate}
       transition={{
-        default: {
-          type: "spring",
-          duration: 2,
-          delay: 0.5,
-        },
-        layout: {
-          type: "spring",
-          duration: 1.6,
-        },
+        type: "spring",
+        duration: 2,
+        delay: 0.5,
       }}
     >
-      <h1 className="text-[400%] font-semibold">Vincent Qi</h1>
+      <h1 className="text-[350%] font-semibold">Vincent's Portfolio</h1>
     </motion.div>
   );
 }
