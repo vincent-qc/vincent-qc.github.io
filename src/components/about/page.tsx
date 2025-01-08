@@ -1,7 +1,9 @@
+import { motion } from "motion/react";
+
 export default function AboutPage() {
   return (
-    <div className="flex flex-col gap-2">
+    <motion.div layout className="flex flex-col gap-2 h-full">
       <p>hi there!</p>
-    </div>
+    </motion.div>
   );
 }

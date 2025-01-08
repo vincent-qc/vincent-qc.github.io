@@ -1,24 +1,28 @@
 import { motion } from "motion/react";
+import { Link } from "react-router-dom";
 
 const NavbarButton = ({ text }: { text: string }) => {
   return (
-    <motion.div
-      whileHover={{
-        borderBottom: "1px solid #FFFFFF",
-      }}
-      transition={{
-        duration: 0.2,
-      }}
-      className="text-white border-b-1 border-transparent cursor-pointer"
-    >
-      {text}
-    </motion.div>
+    <Link to={`/${text}`}>
+      <motion.div
+        whileHover={{
+          borderBottom: "1px solid #FFFFFF",
+        }}
+        transition={{
+          duration: 0.2,
+        }}
+        className="text-white text-lg border-b-[1px] border-transparent cursor-pointer"
+      >
+        {text}
+      </motion.div>
+    </Link>
   );
 };
 
 export default function Navbar() {
   return (
     <motion.div
+      layout
       initial={{
         y: 20,
         opacity: 0,
@@ -37,7 +41,6 @@ export default function Navbar() {
     >
       <NavbarButton text="about" />
       <NavbarButton text="projects" />
-      <NavbarButton text="research" />
       <NavbarButton text="cv" />
       <NavbarButton text="contact" />
     </motion.div>

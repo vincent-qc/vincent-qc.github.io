@@ -3,6 +3,7 @@ import { motion } from "motion/react";
 export default function Namecard() {
   return (
     <motion.div
+      layout
       initial={{ y: 25, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{
