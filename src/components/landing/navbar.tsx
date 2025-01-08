@@ -1,21 +1,29 @@
 import { motion } from "motion/react";
+import { useShallow } from "zustand/react/shallow";
 import { fadeUp } from "../../animations/fade";
 import { Page, usePageStore } from "../../stores/page.store";
 
 const NavbarButton = ({ text, page }: { text: string; page: Page }) => {
+  const { current } = usePageStore(
+    useShallow((state) => ({ current: state.page }))
+  );
+
   return (
     <motion.div
       whileHover={{
-        borderBottom: "1px solid #FFFFFF",
+        borderBottomColor: "#FFFFFFFF",
       }}
       transition={{
-        duration: 0.2,
+        type: "spring",
+        duration: 0.05,
       }}
-      style={{ borderBottom: "1px solid transparent" }}
       onClick={() => {
         usePageStore.setState({ page });
       }}
-      className="text-lg cursor-pointer"
+      style={{
+        borderBottomColor: page === current ? "#FFFFFFFF" : "#00000000",
+      }}
+      className="text-lg cursor-pointer border-b-2 transition-all"
     >
       {text}
     </motion.div>

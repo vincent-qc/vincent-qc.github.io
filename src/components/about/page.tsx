@@ -6,7 +6,8 @@ export default function AboutPage() {
       layout
       className="flex flex-col gap-2 h-full p-4 w-full items-start"
     >
-      <p className="text-2xl font-semibold">hi there,</p>
+      <p className="text-2xl font-semibold">Hi there,</p>
+      <p>I'm</p>
     </motion.div>
   );
 }
