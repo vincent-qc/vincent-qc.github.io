@@ -18,7 +18,7 @@ function Scene() {
         }}
       >
         <ambientLight intensity={Math.PI / 2} />
-        <pointLight position={[300, 200, 200]} decay={0} intensity={Math.PI} />
+        <pointLight position={[300, 150, 0]} decay={0} intensity={Math.PI} />
         <Base />
       </Canvas>
     </div>
