@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import { useShallow } from "zustand/react/shallow";
 import { Page, PageStore, usePageStore } from "../../stores/page.store";
 import AboutPage from "../about/page";
+import ProjectPage from "../projects/page";
 import Scene from "../scenes/scene";
 import Namecard from "./namecard";
 import Navbar from "./navbar";
@@ -10,6 +11,10 @@ const pages = [
   {
     page: Page.ABOUT,
     component: <AboutPage />,
+  },
+  {
+    page: Page.PROJECTS,
+    component: <ProjectPage />,
   },
 ];
 
