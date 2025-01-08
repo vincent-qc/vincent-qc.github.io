@@ -1,10 +1,9 @@
 import { motion } from "motion/react";
-import usePath from "../../hooks/usePath";
+import { useEffect, useState } from "react";
 import AboutPage from "../about/page";
 import Scene from "../scenes/scene";
 import Namecard from "./namecard";
 import Navbar from "./navbar";
-import NotfoundPage from "./notfound";
 
 const pages = [
   {
@@ -18,12 +17,13 @@ const pages = [
 ];
 
 export default function LandingPage() {
-  const { slugs } = usePath();
-  const current = slugs[0];
+  const [page, setPage] = useState("landing");
 
-  if (!pages.find((page) => page.path === current)) {
-    return <NotfoundPage />;
-  }
+  useEffect(() => {
+    setTimeout(() => {
+      setPage("about");
+    }, 3000);
+  }, []);
 
   return (
     <div className="flex flex-row w-screen h-screen">
@@ -32,8 +32,8 @@ export default function LandingPage() {
       </div>
       <motion.div className="w-[50%] flex flex-col justify-center items-center py-16">
         <Namecard />
-        <Navbar />
-        {pages.find((page) => page.path === current)?.component}
+        <Navbar setPage={setPage} />
+        {pages.find((item) => item.path === page)?.component}
       </motion.div>
     </div>
   );

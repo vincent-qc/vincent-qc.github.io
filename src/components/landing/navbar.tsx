@@ -1,48 +1,57 @@
 import { motion } from "motion/react";
-import { Link } from "react-router-dom";
+import { fadeUp } from "../../animations/fade";
 
-const NavbarButton = ({ text }: { text: string }) => {
+const NavbarButton = ({
+  text,
+  setPage,
+}: {
+  text: string;
+  setPage: (page: string) => void;
+}) => {
   return (
-    <Link to={`/${text}`}>
-      <motion.div
-        whileHover={{
-          borderBottom: "1px solid #FFFFFF",
-        }}
-        transition={{
-          duration: 0.2,
-        }}
-        className="text-white text-lg border-b-[1px] border-transparent cursor-pointer"
-      >
-        {text}
-      </motion.div>
-    </Link>
+    <motion.div
+      whileHover={{
+        borderBottom: "1px solid #FFFFFF",
+      }}
+      transition={{
+        duration: 0.2,
+      }}
+      onClick={() => setPage(text)}
+      className="text-white text-lg border-b-[1px] border-transparent cursor-pointer"
+    >
+      {text}
+    </motion.div>
   );
 };
 
-export default function Navbar() {
+export default function Navbar({
+  setPage,
+}: {
+  setPage: (page: string) => void;
+}) {
+  const { initial, animate } = fadeUp(20);
   return (
     <motion.div
       layout
-      initial={{
-        y: 20,
-        opacity: 0,
-      }}
-      animate={{
-        y: 0,
-        opacity: 1,
-      }}
+      initial={initial}
+      animate={animate}
       transition={{
-        type: "spring",
-        damping: 20,
-        duration: 2,
-        delay: 1,
+        default: {
+          type: "spring",
+          duration: 1,
+          delay: 1,
+        },
+        layout: {
+          type: "spring",
+          duration: 1,
+        },
       }}
       className="flex flex-row justify-between gap-2"
     >
-      <NavbarButton text="about" />
-      <NavbarButton text="projects" />
-      <NavbarButton text="cv" />
-      <NavbarButton text="contact" />
+      <NavbarButton setPage={setPage} text="about" />
+      <NavbarButton setPage={setPage} text="projects" />
+      <NavbarButton setPage={setPage} text="cv" />
+      <NavbarButton setPage={setPage} text="contact" />
     </motion.div>
   );
 }
