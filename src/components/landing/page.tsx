@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { useShallow } from "zustand/react/shallow";
 import { Page, PageStore, usePageStore } from "../../stores/page.store";
 import AboutPage from "../about/page";
 import Scene from "../scenes/scene";
@@ -13,10 +14,11 @@ const pages = [
 ];
 
 export default function LandingPage() {
-  const { page } = usePageStore((state: PageStore) => ({
-    page: state.page,
-    setPage: state.setPage,
-  }));
+  const { page } = usePageStore(
+    useShallow((state: PageStore) => ({
+      page: state.page,
+    }))
+  );
 
   return (
     <div className="flex flex-row w-screen h-screen font-poppins text-white">

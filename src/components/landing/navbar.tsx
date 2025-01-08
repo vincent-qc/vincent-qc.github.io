@@ -1,12 +1,8 @@
 import { motion } from "motion/react";
 import { fadeUp } from "../../animations/fade";
-import { Page, PageStore, usePageStore } from "../../stores/page.store";
+import { Page, usePageStore } from "../../stores/page.store";
 
 const NavbarButton = ({ text, page }: { text: string; page: Page }) => {
-  const { setPage } = usePageStore((state: PageStore) => ({
-    setPage: state.setPage,
-  }));
-
   return (
     <motion.div
       whileHover={{
@@ -16,7 +12,9 @@ const NavbarButton = ({ text, page }: { text: string; page: Page }) => {
         duration: 0.2,
       }}
       style={{ borderBottom: "1px solid transparent" }}
-      onClick={() => setPage(page)}
+      onClick={() => {
+        usePageStore.setState({ page });
+      }}
       className="text-lg cursor-pointer"
     >
       {text}
@@ -26,6 +24,7 @@ const NavbarButton = ({ text, page }: { text: string; page: Page }) => {
 
 export default function Navbar() {
   const { initial, animate } = fadeUp(10);
+
   return (
     <motion.div
       layout

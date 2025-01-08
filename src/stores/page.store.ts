@@ -9,12 +9,10 @@ enum Page {
 
 type PageStore = {
   page: Page;
-  setPage: (page: Page) => void;
 };
 
-const usePageStore = create<PageStore>((set) => ({
+const usePageStore = create<PageStore>(() => ({
   page: Page.ABOUT,
-  setPage: (page: Page) => set({ page }),
 }));
 
 export { Page, usePageStore };
