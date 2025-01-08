@@ -1,9 +1,5 @@
-import { useGSAP } from "@gsap/react";
 import { Canvas } from "@react-three/fiber";
-import { gsap } from "gsap";
 import Base from "./base";
-
-gsap.registerPlugin(useGSAP);
 
 function Scene() {
   // const { width, height } = useWindowSize();

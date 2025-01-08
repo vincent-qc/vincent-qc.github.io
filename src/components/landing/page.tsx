@@ -25,7 +25,7 @@ export default function LandingPage() {
       <div className="w-[50%]">
         <Scene />
       </div>
-      <motion.div className="w-[50%] flex flex-col p-24 gap-16">
+      <motion.div className="w-[50%] flex flex-col py-20 pr-20 pl-10 gap-16">
         <div className="flex flex-col items-end justify-center">
           <Namecard />
           <Navbar />
