@@ -1,7 +1,7 @@
 import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { useUnitSize } from "../../hooks/useWindowSize";
-import GatesMesh from "./about/gates";
+import { useUnitSize } from "../hooks/useWindowSize";
+import GatesMesh from "./about/gates/gates";
 
 function Scene() {
   // const { width, height } = useWindowSize();

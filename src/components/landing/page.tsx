@@ -1,10 +1,10 @@
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 import { useShallow } from "zustand/react/shallow";
+import Scene from "../../scenes/scene";
 import { Page, PageStore, usePageStore } from "../../stores/page.store";
 import AboutPage from "../about/page";
 import ProjectPage from "../projects/page";
-import Scene from "../scenes/scene";
 import Namecard from "./namecard";
 import Navbar from "./navbar";
 
