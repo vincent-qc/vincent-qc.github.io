@@ -101,6 +101,26 @@ const LowerLayerMesh = ({
         position={[16.5, 0, 12]}
         rotation={(3 * Math.PI) / 2}
       />
+
+      {/* Balcony */}
+      <group>
+        <mesh position={[10, 6.5, 13.5]}>
+          <meshStandardMaterial color={"#5090A0"} transparent opacity={0.25} />
+          <boxGeometry args={[7, 2, 1]} />
+        </mesh>
+        <mesh position={[13, 6.5, 0]}>
+          <meshStandardMaterial color={"#5090A0"} transparent opacity={0.25} />
+          <boxGeometry args={[1, 2, 26]} />
+        </mesh>
+        <mesh position={[0, 6.5, -13.5]}>
+          <meshStandardMaterial color={"#5090A0"} transparent opacity={0.25} />
+          <boxGeometry args={[27, 2, 1]} />
+        </mesh>
+        <mesh position={[-13, 6.5, -9.5]}>
+          <meshStandardMaterial color={"#5090A0"} transparent opacity={0.25} />
+          <boxGeometry args={[1, 2, 7]} />
+        </mesh>
+      </group>
     </group>
   );
 };
@@ -117,7 +137,7 @@ const MiddleLayerMesh = ({
     shape.moveTo(-16, 16);
     shape.lineTo(0, 16);
     shape.lineTo(0, 6);
-    shape.lineTo(16, -16);
+    shape.lineTo(14, -16);
     shape.lineTo(-16, -16);
     return shape;
   }, []);
