@@ -33,7 +33,7 @@ export default function MiddleLayerMesh({
         <meshStandardMaterial color={"#3F3F3F"} />
       </mesh>
 
-      {/* Support beams */}
+      {/* Support */}
       <group>
         <mesh position={[-12, -5.5, 12]}>
           <meshStandardMaterial color={"#A0A0A0"} />
