@@ -10,10 +10,10 @@ export default function MiddleLayerMesh({
 }) {
   const shape = useMemo(() => {
     const shape = new THREE.Shape();
-    shape.moveTo(-16, 16);
-    shape.lineTo(0, 16);
-    shape.lineTo(0, 6);
-    shape.lineTo(14, -16);
+    shape.moveTo(-16, 18);
+    shape.lineTo(0, 18);
+    shape.lineTo(0, 10);
+    shape.lineTo(16, -16);
     shape.lineTo(-16, -16);
     return shape;
   }, []);

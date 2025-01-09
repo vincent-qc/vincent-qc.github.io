@@ -18,8 +18,12 @@ function Scene() {
       >
         <OrbitControls />
         <ambientLight intensity={Math.PI / 2} />
-        {/* <pointLight position={[500, 400, 50]} decay={0} intensity={Math.PI} />
-        <pointLight
+        {/* <pointLight
+            position={[45, 25, 20]}
+            decay={0}
+            intensity={Math.PI / 2}
+          /> */}
+        {/* <pointLight
           position={[-300, -150, 0]}
           decay={0}
           intensity={Math.PI / 2}

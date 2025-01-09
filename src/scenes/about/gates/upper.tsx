@@ -1,3 +1,5 @@
+import { WindowFullMesh, WindowNormalMesh } from "./windows";
+
 export default function UpperLayerMesh({
   scale,
   position,
@@ -17,16 +19,31 @@ export default function UpperLayerMesh({
         <boxGeometry args={[16, 11, 10]} />
       </mesh>
 
-      {/* Window */}
-      <mesh position={[8, 4.5, 8]}>
-        <boxGeometry args={[16, 7, 16]} />
+      {/* Window Block */}
+      <mesh position={[8, 4.5, 10]}>
+        <boxGeometry args={[16, 7, 12]} />
         <meshStandardMaterial color={"#106070"} transparent opacity={0.5} />
       </mesh>
 
+      {/* Window Panes */}
+      <WindowFullMesh scale={[0.6, 0.6, 0.6]} position={[-8, 4.5, 27]} />
+      <WindowNormalMesh
+        scale={[0.6, 0.6, 0.6]}
+        position={[17, 4.5, -12]}
+        rotation={Math.PI / 2}
+        inverted
+      />
+      <WindowNormalMesh
+        scale={[0.6, 0.6, 0.6]}
+        position={[17, 4.5, -2]}
+        rotation={Math.PI / 2}
+        inverted
+      />
+
       {/* Fill */}
       <group>
-        <mesh position={[8, 4.5, -8]}>
-          <boxGeometry args={[16, 7, 16]} />
+        <mesh position={[8, 4.5, -6]}>
+          <boxGeometry args={[16, 7, 20]} />
           <meshStandardMaterial color={"#3F3F3F"} />
         </mesh>
         <mesh position={[-8, 4.5, -8]}>

@@ -1,4 +1,4 @@
-import WindowMesh from "./windows";
+import { WindowNormalMesh } from "./windows";
 
 export default function LowerLayerMesh({
   scale,
@@ -14,39 +14,25 @@ export default function LowerLayerMesh({
         <boxGeometry args={[32, 11, 32]} />
       </mesh>
       {/* Left face windows */}
-      <WindowMesh scale={[0.35, 0.35, 0.3]} position={[-12, 0, 16.5]} />
-      <WindowMesh scale={[0.35, 0.35, 0.3]} position={[-6, 0, 16.5]} />
-      <WindowMesh scale={[0.35, 0.35, 0.3]} position={[0, 0, 16.5]} />
-      <WindowMesh scale={[0.35, 0.35, 0.3]} position={[6, 0, 16.5]} />
-      <WindowMesh scale={[0.35, 0.35, 0.3]} position={[12, 0, 16.5]} />
-
+      <WindowNormalMesh scale={[0.6, 0.6, 0.6]} position={[10, 0, 16.5]} />
+      <WindowNormalMesh scale={[0.6, 0.6, 0.6]} position={[0, 0, 16.5]} />{" "}
+      <WindowNormalMesh scale={[0.6, 0.6, 0.6]} position={[-10, 0, 16.5]} />
       {/* Right face windows */}
-      <WindowMesh
-        scale={[0.35, 0.35, 0.3]}
-        position={[16.5, 0, -12]}
+      <WindowNormalMesh
+        scale={[0.6, 0.6, 0.6]}
+        position={[16.5, 0, 10]}
         rotation={(3 * Math.PI) / 2}
       />
-      <WindowMesh
-        scale={[0.35, 0.35, 0.3]}
-        position={[16.5, 0, -6]}
-        rotation={(3 * Math.PI) / 2}
-      />
-      <WindowMesh
-        scale={[0.35, 0.35, 0.3]}
+      <WindowNormalMesh
+        scale={[0.6, 0.6, 0.6]}
         position={[16.5, 0, 0]}
         rotation={(3 * Math.PI) / 2}
       />
-      <WindowMesh
-        scale={[0.35, 0.35, 0.3]}
-        position={[16.5, 0, 6]}
+      <WindowNormalMesh
+        scale={[0.6, 0.6, 0.6]}
+        position={[16.5, 0, -10]}
         rotation={(3 * Math.PI) / 2}
       />
-      <WindowMesh
-        scale={[0.35, 0.35, 0.3]}
-        position={[16.5, 0, 12]}
-        rotation={(3 * Math.PI) / 2}
-      />
-
       {/* Balcony */}
       <group>
         <mesh position={[10, 6.5, 13.5]}>
