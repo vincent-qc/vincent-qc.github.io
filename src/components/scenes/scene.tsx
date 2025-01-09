@@ -1,7 +1,7 @@
+import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { useUnitSize } from "../../hooks/useWindowSize";
-import AboutScene from "./about";
-import Base from "./base";
+import GatesMesh from "./about/gates";
 
 function Scene() {
   // const { width, height } = useWindowSize();
@@ -16,11 +16,21 @@ function Scene() {
           near: -2000,
         }}
       >
+        <OrbitControls />
         <ambientLight intensity={Math.PI / 2} />
-        <pointLight position={[300, 150, 0]} decay={0} intensity={Math.PI} />
+        {/* <pointLight position={[500, 400, 50]} decay={0} intensity={Math.PI} />
+        <pointLight
+          position={[-300, -150, 0]}
+          decay={0}
+          intensity={Math.PI / 2}
+        /> */}
+        <directionalLight position={[100, 100, 0]} intensity={Math.PI / 2} />
+        <directionalLight position={[0, 100, 0]} intensity={Math.PI / 2} />
+        <directionalLight position={[-100, -100, 0]} intensity={Math.PI / 2} />
         <mesh scale={[unit, unit, unit]}>
-          <AboutScene />
-          <Base />
+          {/* <AboutScene />
+          <Base /> */}
+          <GatesMesh position={[0, 0, 0]} />
         </mesh>
       </Canvas>
     </div>
