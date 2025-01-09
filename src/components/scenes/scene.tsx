@@ -30,7 +30,7 @@ function Scene() {
         <mesh scale={[unit, unit, unit]}>
           {/* <AboutScene />
           <Base /> */}
-          <GatesMesh position={[0, 0, 0]} />
+          <GatesMesh scale={[1, 1, 1]} position={[0, 0, 0]} />
         </mesh>
       </Canvas>
     </div>
