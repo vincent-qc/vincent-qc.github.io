@@ -1,7 +1,12 @@
 import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
+import {
+  Bloom,
+  EffectComposer,
+  ToneMapping,
+} from "@react-three/postprocessing";
 import { useUnitSize } from "../hooks/useWindowSize";
-import GatesMesh from "./about/gates/gates";
+import DeskMesh from "./about/desk/desk";
 
 function Scene() {
   // const { width, height } = useWindowSize();
@@ -17,6 +22,10 @@ function Scene() {
         }}
       >
         <OrbitControls />
+        <EffectComposer>
+          <Bloom mipmapBlur luminanceThreshold={1} levels={1} intensity={1} />
+          <ToneMapping />
+        </EffectComposer>
         <ambientLight intensity={Math.PI / 2} />
         {/* <pointLight
             position={[45, 25, 20]}
@@ -34,7 +43,8 @@ function Scene() {
         <mesh scale={[unit, unit, unit]}>
           {/* <AboutScene />
           <Base /> */}
-          <GatesMesh scale={[1, 1, 1]} position={[0, 0, 0]} />
+          {/* <GatesMesh scale={[1, 1, 1]} position={[0, 0, 0]} /> */}
+          <DeskMesh scale={[1, 1, 1]} position={[0, 0, 0]} />
         </mesh>
       </Canvas>
     </div>
