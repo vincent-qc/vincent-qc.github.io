@@ -40,8 +40,8 @@ export default function FrontMesh({
       </mesh>
 
       {/* Rest of Body */}
-      <mesh position={[0, 6, -8]}>
-        <boxGeometry args={[16, 12, 16]} />
+      <mesh position={[0, 6, -5]}>
+        <boxGeometry args={[16, 12, 10]} />
         <meshStandardMaterial color="#E7D1B1" />
       </mesh>
     </group>

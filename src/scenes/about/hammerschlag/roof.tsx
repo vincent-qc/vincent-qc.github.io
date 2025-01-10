@@ -38,18 +38,18 @@ const FrontRoofMesh = ({
     <group scale={scale} position={position}>
       <mesh scale={[1.15, 1.15, 1.15]}>
         <extrudeGeometry args={[edge, { depth: 2, bevelEnabled: false }]} />
-        <meshStandardMaterial color="#068a79" />
+        <meshStandardMaterial color="#068A79" />
       </mesh>
-      <mesh position={[0, 0, -20]}>
-        <extrudeGeometry args={[edge, { depth: 20, bevelEnabled: false }]} />
+      <mesh position={[0, 0, -13.7]}>
+        <extrudeGeometry args={[edge, { depth: 13.7, bevelEnabled: false }]} />
         <meshStandardMaterial color="#A0A0A0" />
       </mesh>
-      <mesh scale={[1.15, 1.15, 1.15]} position={[0, 0, -22]}>
+      <mesh scale={[1.15, 1.15, 1.15]} position={[0, 0, -16]}>
         <extrudeGeometry args={[edge, { depth: 2, bevelEnabled: false }]} />
-        <meshStandardMaterial color="#068a79" />
+        <meshStandardMaterial color="#068A79" />
       </mesh>
-      <mesh position={[0, 0, -21]}>
-        <extrudeGeometry args={[fill, { depth: 22, bevelEnabled: false }]} />
+      <mesh position={[0, 0, -15]}>
+        <extrudeGeometry args={[fill, { depth: 16, bevelEnabled: false }]} />
         <meshStandardMaterial color="#E7D1B1" />
       </mesh>
     </group>

@@ -14,9 +14,9 @@ export default function HammerschlagMesh({
   return (
     <group scale={scale} position={position} rotation={[0, rotation || 0, 0]}>
       <FrontMesh scale={[1, 1, 1]} position={[0, 0, 0]} />
-      <CenterMesh scale={[1, 1, 1]} position={[0, 8, -27]} />
-      <WingMesh scale={[1, 1, 1]} position={[18, 6, -27]} />
-      <WingMesh scale={[1, 1, 1]} position={[-18, 6, -27]} left />
+      <CenterMesh scale={[1, 1, 1]} position={[0, 8, -21]} />
+      <WingMesh scale={[1, 1, 1]} position={[19, 6, -21]} />
+      <WingMesh scale={[1, 1, 1]} position={[-19, 6, -21]} left />
     </group>
   );
 }

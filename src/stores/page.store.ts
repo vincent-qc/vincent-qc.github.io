@@ -3,6 +3,7 @@ import { create } from "zustand";
 enum Page {
   ABOUT,
   PROJECTS,
+  READING,
   CV,
   CONTACT,
 }

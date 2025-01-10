@@ -17,6 +17,18 @@ const pages = [
     page: Page.PROJECTS,
     component: <ProjectPage />,
   },
+  {
+    page: Page.READING,
+    component: <div>Reading</div>,
+  },
+  {
+    page: Page.CV,
+    component: <div>CV</div>,
+  },
+  {
+    page: Page.CONTACT,
+    component: <div>Contact</div>,
+  },
 ];
 
 export default function LandingPage() {
