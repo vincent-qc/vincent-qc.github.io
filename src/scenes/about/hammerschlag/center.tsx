@@ -96,12 +96,12 @@ export default function CenterMesh({
         </mesh>
       </group>
 
-      <mesh>
-        <boxGeometry args={[16, 16, 16]} />
+      <mesh position={[0, -0.5, 0]}>
+        <boxGeometry args={[16, 15, 16]} />
         <meshStandardMaterial color="#E7D1B1" />
       </mesh>
-      <mesh position={[0, 9, 0]} rotation={[0, Math.PI / 8, 0]}>
-        <cylinderGeometry args={[7, 7, 2, 8]} />
+      <mesh position={[0, 8.5, 0]} rotation={[0, Math.PI / 8, 0]}>
+        <cylinderGeometry args={[7, 7, 3, 8]} />
         <meshStandardMaterial color="#E9D9D1" />
       </mesh>
       <mesh position={[0, 10, 0]} rotation={[0, Math.PI / 8, 0]}>
