@@ -1,10 +1,12 @@
+import HammerschlagMesh from "./hammerschlag/hammerschlag";
+
 export default function AboutScene() {
   return (
     <group>
-      <mesh position={[-7.5, 5, -7.5]}>
-        <meshStandardMaterial color={"#404040"} />
-        <boxGeometry args={[5, 5, 5]} />
-      </mesh>
+      {/* <GatesMesh scale={[0.2, 0.2, 0.2]} position={[-7, 5, -7]} />
+      <OrganizedDeskMesh scale={[0.35, 0.35, 0.35]} position={[4, 4.85, -7]} />
+      <Base /> */}
+      <HammerschlagMesh scale={[0.2, 0.2, 0.2]} position={[-7, 5, -7]} />
     </group>
   );
 }

@@ -70,9 +70,9 @@ const WindowNormalMesh = ({
         <meshStandardMaterial color={"#909090"} />
         <boxGeometry args={[8, 2, 2]} />
       </mesh>
-      <mesh position={[-5.5, 0, -0.5]}>
+      <mesh position={[-5, 0, -0.5]}>
         <meshStandardMaterial color={"#909090"} />
-        <boxGeometry args={[3, 8, 2]} />
+        <boxGeometry args={[2, 8, 2]} />
       </mesh>
       <mesh position={[-2, -5, -0.5]}>
         <meshStandardMaterial color={"#909090"} />
@@ -106,11 +106,11 @@ const WindowFullMesh = ({
       </mesh>
       <mesh position={[7, 0, 0]}>
         <meshStandardMaterial color={"#909090"} />
-        <boxGeometry args={[2, 8, 2]} />
+        <boxGeometry args={[2, 12, 2]} />
       </mesh>
       <mesh position={[-7, 0, 0]}>
         <meshStandardMaterial color={"#909090"} />
-        <boxGeometry args={[2, 8, 2]} />
+        <boxGeometry args={[2, 12, 2]} />
       </mesh>
       <mesh position={[0, -5, 0]}>
         <meshStandardMaterial color={"#909090"} />

@@ -11,7 +11,7 @@ export default function LowerLayerMesh({
     <group position={position} scale={scale}>
       <mesh>
         <meshStandardMaterial color={"#3F3F3F"} />
-        <boxGeometry args={[32, 11, 32]} />
+        <boxGeometry args={[32, 12, 32]} />
       </mesh>
       {/* Left face windows */}
       <WindowNormalMesh scale={[0.6, 0.6, 0.6]} position={[10, 0, 16.5]} />
@@ -35,19 +35,19 @@ export default function LowerLayerMesh({
       />
       {/* Balcony */}
       <group>
-        <mesh position={[10, 6.5, 13.5]}>
+        <mesh position={[10, 7, 13.5]}>
           <meshStandardMaterial color={"#5090A0"} transparent opacity={0.25} />
           <boxGeometry args={[7, 2, 1]} />
         </mesh>
-        <mesh position={[13, 6.5, 0]}>
+        <mesh position={[13, 7, 0]}>
           <meshStandardMaterial color={"#5090A0"} transparent opacity={0.25} />
           <boxGeometry args={[1, 2, 26]} />
         </mesh>
-        <mesh position={[0, 6.5, -13.5]}>
+        <mesh position={[0, 7, -13.5]}>
           <meshStandardMaterial color={"#5090A0"} transparent opacity={0.25} />
           <boxGeometry args={[27, 2, 1]} />
         </mesh>
-        <mesh position={[-13, 6.5, -9.5]}>
+        <mesh position={[-13, 7, -9.5]}>
           <meshStandardMaterial color={"#5090A0"} transparent opacity={0.25} />
           <boxGeometry args={[1, 2, 7]} />
         </mesh>

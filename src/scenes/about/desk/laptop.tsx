@@ -11,7 +11,7 @@ export default function LaptopMesh({
     const shape = new THREE.Shape();
     shape.moveTo(16, 8);
     shape.lineTo(16, -8);
-    shape.arc(-2, 0, 2, -0, -Math.PI / 2, true);
+    shape.arc(-2, 0, 2, 0, -Math.PI / 2, true);
     shape.lineTo(-14, -10);
     shape.arc(0, 2, 2, -Math.PI / 2, -Math.PI, true);
     shape.lineTo(-16, 10);

@@ -6,8 +6,8 @@ export default function Base() {
 
   return (
     <mesh ref={meshRef}>
-      <boxGeometry args={[20, 2, 20]} />
-      <meshStandardMaterial color={"#C0C0C0"} />
+      <boxGeometry args={[20, 1, 20]} />
+      <meshStandardMaterial color={"#808080"} />
     </mesh>
   );
 }

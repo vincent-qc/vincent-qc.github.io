@@ -14,14 +14,14 @@ export default function UpperLayerMesh({
         <meshStandardMaterial color={"#3F3F3F"} />
         <boxGeometry args={[32, 2, 32]} />
       </mesh>
-      <mesh position={[-8, 4.5, 21]}>
+      <mesh position={[-8, 5, 21]}>
         <meshStandardMaterial color={"#3F3F3F"} />
-        <boxGeometry args={[16, 11, 10]} />
+        <boxGeometry args={[16, 12, 10]} />
       </mesh>
 
       {/* Window Block */}
-      <mesh position={[8, 4.5, 10]}>
-        <boxGeometry args={[16, 7, 12]} />
+      <mesh position={[8, 5, 10]}>
+        <boxGeometry args={[16, 8, 12]} />
         <meshStandardMaterial color={"#106070"} transparent opacity={0.5} />
       </mesh>
 
@@ -29,50 +29,58 @@ export default function UpperLayerMesh({
       <WindowFullMesh scale={[0.6, 0.6, 0.6]} position={[-8, 4.5, 27]} />
       <WindowNormalMesh
         scale={[0.6, 0.6, 0.6]}
-        position={[17, 4.5, -12]}
+        position={[17, 5, -12]}
         rotation={Math.PI / 2}
         inverted
       />
       <WindowNormalMesh
         scale={[0.6, 0.6, 0.6]}
-        position={[17, 4.5, -2]}
+        position={[17, 5, -2]}
         rotation={Math.PI / 2}
         inverted
       />
 
       {/* Fill */}
       <group>
-        <mesh position={[8, 4.5, -6]}>
-          <boxGeometry args={[16, 7, 20]} />
+        <mesh position={[8, 5, -6]}>
+          <boxGeometry args={[16, 8, 20]} />
           <meshStandardMaterial color={"#3F3F3F"} />
         </mesh>
-        <mesh position={[-8, 4.5, -8]}>
-          <boxGeometry args={[16, 7, 16]} />
+        <mesh position={[-8, 5, -8]}>
+          <boxGeometry args={[16, 8, 16]} />
           <meshStandardMaterial color={"#3F3F3F"} />
         </mesh>
-        <mesh position={[-8, 4.5, 8]}>
-          <boxGeometry args={[16, 7, 16]} />
+        <mesh position={[-8, 5, 8]}>
+          <boxGeometry args={[16, 8, 16]} />
           <meshStandardMaterial color={"#3F3F3F"} />
         </mesh>
       </group>
 
       {/* Top */}
-      <mesh position={[0, 9, 0]}>
+      <mesh position={[0, 10, 0]}>
         <meshStandardMaterial color={"#3F3F3F"} />
         <boxGeometry args={[32, 2, 32]} />
       </mesh>
-      <mesh position={[4, 11, 20]}>
+      <mesh position={[4, 14, 20]}>
         <meshStandardMaterial color={"#3F3F3F"} />
         <boxGeometry args={[12, 2, 12]} />
       </mesh>
+      <mesh position={[-1, 12, 20]}>
+        <meshStandardMaterial color={"#3F3F3F"} />
+        <boxGeometry args={[2, 2, 12]} />
+      </mesh>
+      <mesh position={[4, 12, 15]}>
+        <meshStandardMaterial color={"#3F3F3F"} />
+        <boxGeometry args={[12, 2, 2]} />
+      </mesh>
 
       {/* Support */}
-      <mesh position={[9, -6.5, -9]}>
-        <cylinderGeometry args={[1, 1, 11]} />
+      <mesh position={[9, -7, -9]}>
+        <cylinderGeometry args={[1, 1, 12]} />
         <meshStandardMaterial color={"#A0A0A0"} />
       </mesh>
-      <mesh position={[5, 4.5, 21]}>
-        <cylinderGeometry args={[1, 1, 11]} />
+      <mesh position={[5, 6, 21]}>
+        <cylinderGeometry args={[1, 1, 14]} />
         <meshStandardMaterial color={"#A0A0A0"} />
       </mesh>
 

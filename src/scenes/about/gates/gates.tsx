@@ -11,9 +11,9 @@ export default function GatesMesh({
 }) {
   return (
     <group position={position} scale={scale}>
-      <LowerLayerMesh scale={[1, 1, 1]} position={[0, -5.5, 0]} />
-      <MiddleLayerMesh scale={[1, 1, 1]} position={[0, 0, 10]} />
-      <UpperLayerMesh scale={[1, 1, 1]} position={[0, 12, 0]} />
+      <LowerLayerMesh scale={[1, 1, 1]} position={[0, 0, 0]} />
+      <MiddleLayerMesh scale={[1, 1, 1]} position={[0, 6, 10]} />
+      <UpperLayerMesh scale={[1, 1, 1]} position={[0, 19, 0]} />
     </group>
   );
 }

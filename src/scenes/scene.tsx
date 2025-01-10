@@ -6,7 +6,7 @@ import {
   ToneMapping,
 } from "@react-three/postprocessing";
 import { useUnitSize } from "../hooks/useWindowSize";
-import DeskMesh from "./about/desk/desk";
+import AboutScene from "./about/about";
 
 function Scene() {
   // const { width, height } = useWindowSize();
@@ -41,10 +41,9 @@ function Scene() {
         <directionalLight position={[0, 100, 0]} intensity={Math.PI / 2} />
         <directionalLight position={[-100, -100, 0]} intensity={Math.PI / 2} />
         <mesh scale={[unit, unit, unit]}>
-          {/* <AboutScene />
-          <Base /> */}
+          <AboutScene />
           {/* <GatesMesh scale={[1, 1, 1]} position={[0, 0, 0]} /> */}
-          <DeskMesh scale={[1, 1, 1]} position={[0, 0, 0]} />
+          {/* <DeskMesh scale={[1, 1, 1]} position={[0, 0, 0]} /> */}
         </mesh>
       </Canvas>
     </div>
