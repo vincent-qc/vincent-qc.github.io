@@ -7,7 +7,7 @@ export default function ProjectPage() {
       style={{
         scrollbarWidth: "none",
       }}
-      className="flex h-full w-full flex-col items-start gap-4 overflow-auto px-2 py-4"
+      className="flex h-full w-full flex-col items-start gap-4 overflow-auto py-4"
     >
       {projects.map((project, index) => (
         <ProjectCard key={index} {...project} index={index} />
