@@ -25,7 +25,7 @@ const useWindowSize = () => {
 
 const useUnitSize = () => {
   const { width } = useWindowSize();
-  return width / 60;
+  return width / 70;
 };
 
 export { useUnitSize, useWindowSize };
