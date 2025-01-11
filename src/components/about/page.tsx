@@ -37,25 +37,24 @@ export default function AboutPage() {
         <br /> and Ex-Founding SWE at EduBeyond.
         <br />
         <br />
-        Over the past years, I've worked fullstack on my startup, EduBeyond,
-        with React, TypeScript, Node, and Python. I've developed a Retrieval
-        Augmented Generation (RAG) pipeline using Python, PGVector, and the
-        OpenAI SDK.
+        At 16, I helped found EduBeyond, an EdTech startup that built LLM
+        powered Learning Management Systems. I researched and developed an
+        education-oriented Retrieval Augmented Generation pipeline with Python,
+        PGVector, and the OpenAI SDK.
         <br />
         <br />
-        My current software and research interests include fundamental AI
-        systems, such as scalable vector databases, vectorization methods,
-        retrieval models, and more.
+        My current software and research interests include foundation AI
+        systems, such as scalable vector databases, vectorization methods, and
+        retrieval models.
         <br />
         <br />
-        As for fun, I enjoy drawing, building games, and experimenting with 3D
-        computer graphics (see left). I may also be slightly picky about
-        frontend design and animations.
+        As for fun, I enjoy drawing, building games, and experimenting with
+        computer graphics (see left).
         <br />
         <br />
         Welcome to my page, where you can find my projects, artwork, and more :)
-        <br />
-        Enjoy your stay!
+        <br />I genuinely believe in building relationships, so feel free to
+        reach out!
       </motion.p>
     </motion.div>
   );

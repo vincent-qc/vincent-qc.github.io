@@ -1,3 +1,8 @@
+import { useLoader } from "@react-three/fiber";
+import { Suspense } from "react";
+import * as THREE from "three";
+import img from "../../../assets/blackboard.png";
+
 export default function BlackboardMesh({
   scale,
   position,
@@ -5,6 +10,7 @@ export default function BlackboardMesh({
   scale: [number, number, number];
   position: [number, number, number];
 }) {
+  const texture = useLoader(THREE.TextureLoader, img);
   return (
     <group scale={scale} position={position}>
       {/* Frame */}
@@ -54,6 +60,12 @@ export default function BlackboardMesh({
       </mesh>
 
       {/* Image */}
+      <Suspense fallback={null}>
+        <mesh position={[0, 0, 1.5]}>
+          <planeGeometry args={[48, 32]} />
+          <meshStandardMaterial map={texture} />
+        </mesh>
+      </Suspense>
     </group>
   );
 }
