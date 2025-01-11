@@ -1,3 +1,5 @@
+import { motion } from "motion/react";
+
 const colors = new Map<string, string>([
   ["license", "bg-red-500"],
   ["language", "bg-indigo-400"],
@@ -24,14 +26,31 @@ export default function ProjectCard({
   description,
   image,
   tags,
+  index,
 }: {
   name: string;
   description: string;
   image?: string;
   tags: { license?: string; languages: string[]; libraries: string[] };
+  index: number;
 }) {
   return (
-    <div className="flex h-full w-full flex-col gap-4 rounded-xl bg-[#1D1D1D] p-4 transition-all hover:bg-[#202020]">
+    <motion.div
+      initial={{
+        opacity: 0,
+        y: 20,
+      }}
+      animate={{
+        opacity: 1,
+        y: 0,
+      }}
+      transition={{
+        type: "spring",
+        duration: 1,
+        delay: 0.2 + 0.2 * index,
+      }}
+      className="flex h-full w-full flex-col gap-4 rounded-xl bg-[#1D1D1D] p-4 transition-colors hover:bg-[#202020]"
+    >
       <div className="flex w-full flex-row gap-4">
         <img src={image} alt={name} className="h-16 w-16 rounded-xl" />
         <div className="flex flex-col justify-center">
@@ -44,13 +63,13 @@ export default function ProjectCard({
         style={{ scrollbarWidth: "none" }}
       >
         {tags.license && <TagCard tag={tags.license} type="license" />}
-        {tags.languages.map((language) => (
-          <TagCard tag={language} type="language" />
+        {tags.languages.map((language, index) => (
+          <TagCard key={index} tag={language} type="language" />
         ))}
-        {tags.libraries.map((library) => (
-          <TagCard tag={library} type="library" />
+        {tags.libraries.map((library, index) => (
+          <TagCard key={index} tag={library} type="library" />
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }

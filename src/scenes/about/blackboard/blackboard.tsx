@@ -1,7 +1,7 @@
 import { useLoader } from "@react-three/fiber";
 import { Suspense } from "react";
 import * as THREE from "three";
-import img from "../../../assets/blackboard.png";
+import img from "../../../assets/scenes/blackboard.png";
 
 export default function BlackboardMesh({
   scale,
