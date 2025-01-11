@@ -50,7 +50,7 @@ export default function LandingPage() {
       <div className="w-[50%]">
         <Scene />
       </div>
-      <motion.div className="flex w-[50%] flex-col gap-16 py-20 pl-10 pr-20">
+      <motion.div className="flex w-[50%] flex-col gap-8 py-20 pl-10 pr-20">
         <div className="flex flex-col items-end justify-center">
           <Namecard />
           <Navbar />

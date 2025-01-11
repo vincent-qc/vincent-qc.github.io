@@ -1,7 +1,7 @@
 const colors = new Map<string, string>([
-  ["license", "bg-red-300"],
-  ["language", "bg-blue-300"],
-  ["library", "bg-green-300"],
+  ["license", "bg-red-500"],
+  ["language", "bg-indigo-400"],
+  ["library", "bg-emerald-400"],
 ]);
 
 const TagCard = ({
@@ -11,7 +11,12 @@ const TagCard = ({
   tag: string;
   type: "license" | "language" | "library";
 }) => {
-  return <div>{tag}</div>;
+  return (
+    <div className="flex flex-row items-center justify-center gap-1">
+      <p className="text-sm font-light tracking-wider">{tag}</p>
+      <circle className={`h-2 w-2 rounded-full ${colors.get(type)}`} />
+    </div>
+  );
 };
 
 export default function ProjectCard({
@@ -23,23 +28,22 @@ export default function ProjectCard({
   name: string;
   description: string;
   image?: string;
-  tags: { license: string; languages: string[]; libraries: string[] };
+  tags: { license?: string; languages: string[]; libraries: string[] };
 }) {
   return (
     <div className="flex h-full w-full flex-col gap-4 rounded-xl bg-[#1D1D1D] p-4 transition-all hover:bg-[#202020]">
       <div className="flex w-full flex-row gap-4">
-        <img
-          src={image}
-          alt={name}
-          className="h-16 w-16 rounded-xl bg-yellow-200"
-        />
+        <img src={image} alt={name} className="h-16 w-16 rounded-xl" />
         <div className="flex flex-col justify-center">
           <h1 className="text-lg font-semibold">{name}</h1>
-          <p className="p-1 text-xs font-light">{description}</p>
+          <p className="py-1 text-sm font-light">{description}</p>
         </div>
       </div>
-      <div className="flex w-full flex-row gap-2">
-        <TagCard tag={tags.license} type="license" />
+      <div
+        className="flex w-full flex-row gap-4 overflow-auto"
+        style={{ scrollbarWidth: "none" }}
+      >
+        {tags.license && <TagCard tag={tags.license} type="license" />}
         {tags.languages.map((language) => (
           <TagCard tag={language} type="language" />
         ))}

@@ -47,7 +47,7 @@ export default function Navbar() {
     >
       <NavbarButton text="who am i" page={Page.ABOUT} />
       <NavbarButton text="my work" page={Page.PROJECTS} />
-      <NavbarButton text="reading" page={Page.READING} />
+      {/* <NavbarButton text="reading" page={Page.READING} /> */}
       <NavbarButton text="cv" page={Page.CV} />
       <NavbarButton text="reach me" page={Page.CONTACT} />
     </motion.div>

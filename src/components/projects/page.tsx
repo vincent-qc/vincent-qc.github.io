@@ -20,7 +20,7 @@ export default function ProjectPage() {
       style={{
         scrollbarWidth: "none",
       }}
-      className="flex h-full w-full flex-col items-start gap-4 overflow-auto p-4"
+      className="flex h-full w-full flex-col items-start gap-4 overflow-auto px-2 py-6"
     >
       {projects.map((project) => (
         <ProjectCard {...project} />

@@ -1,19 +1,22 @@
 {
   "name": "portfolio",
   "private": true,
+  "homepage": "https://vincent-qc.github.io",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build && vite optimize",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "pnpm run build && gh-pages -d dist"
   },
   "dependencies": {
     "@react-three/drei": "^9.120.6",
     "@react-three/fiber": "^8.17.10",
     "@react-three/postprocessing": "^2.16.6",
     "@types/three": "^0.171.0",
+    "gh-pages": "^6.3.0",
     "motion": "^11.16.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
