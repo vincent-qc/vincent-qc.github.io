@@ -1,5 +1,6 @@
 import { Page } from "../../stores/page.store";
 import AboutPage from "../about/page";
+import ContactPage from "../contact/page";
 import CvPage from "../cv/page";
 import ProjectPage from "../projects/page";
 
@@ -22,7 +23,7 @@ const pages = [
   },
   {
     page: Page.CONTACT,
-    component: <div>Contact</div>,
+    component: <ContactPage />,
   },
 ];
 

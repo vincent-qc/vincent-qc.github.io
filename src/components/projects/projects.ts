@@ -31,7 +31,7 @@ export const projects = [
   },
   {
     name: "Neobot",
-    description: "Discord bot to control neopixel lights",
+    description: "Discord bot to control my personal Neopixel LED lights",
     image: "/projects/neobot.png",
     tags: {
       license: "mit",
@@ -41,7 +41,7 @@ export const projects = [
   },
   {
     name: "BTDExp",
-    description: "Automation software to play and generate exp in BTDB2",
+    description: "Automation software that analyzes and interfaces with a live GUI feed to play BTDB2 to generate tower exp",
     image: "/projects/btdexp.webp",
     tags: {
       license: "gpl v3",
@@ -51,17 +51,17 @@ export const projects = [
   },
   // {
   //   name: "Porfolio",
-  //   description: "This website!",
+  //   description: "This website! Built with threejs for blazingly fast renders",
   //   image: "../../assets/",
   //   tags: {
   //     license: "mit",
   //     languages: ["typescript"],
-  //     libraries: ["react", "three.js"],
+  //     libraries: ["react", "vite", "three.js"],
   //   },
   // },
   {
     name: "Natural Selection Simulation",
-    description: "Natural evolution demonstration using particle creatures",
+    description: "Evolution through natural selection demonstrated through particle creatures",
     image: "/projects/particle.png",
     tags: {
       license: "mit",
