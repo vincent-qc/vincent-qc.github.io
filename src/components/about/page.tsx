@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 
 export default function AboutPage() {
   return (
-    <motion.div className="flex flex-col gap-2 h-full p-4 w-full items-start">
+    <motion.div className="flex h-full w-full flex-col items-start gap-2 p-4">
       <motion.p
         initial={{
           opacity: 0,

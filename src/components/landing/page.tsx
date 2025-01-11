@@ -36,7 +36,7 @@ export default function LandingPage() {
   const { page } = usePageStore(
     useShallow((state: PageStore) => ({
       page: state.page,
-    }))
+    })),
   );
 
   useEffect(() => {
@@ -46,11 +46,11 @@ export default function LandingPage() {
   });
 
   return (
-    <div className="flex flex-row w-screen h-screen font-poppins text-white">
+    <div className="flex h-screen w-screen flex-row font-poppins text-white">
       <div className="w-[50%]">
         <Scene />
       </div>
-      <motion.div className="w-[50%] flex flex-col py-20 pr-20 pl-10 gap-16">
+      <motion.div className="flex w-[50%] flex-col gap-16 py-20 pl-10 pr-20">
         <div className="flex flex-col items-end justify-center">
           <Namecard />
           <Navbar />

@@ -14,9 +14,9 @@ export default function ProjectCard({
   tags: { license: string; languages: string[]; libraries: string[] }[];
 }) {
   return (
-    <div className="flex flex-col rounded-xl w-full h-full bg-[#303030] p-4">
-      <div className="w-full flex flex-row"></div>
-      <div className="flex flex-row gap-2 w-full bg-white">tags</div>
+    <div className="flex h-full w-full flex-col rounded-xl bg-[#303030] p-4">
+      <div className="flex w-full flex-row"></div>
+      <div className="flex w-full flex-row gap-2 bg-white">tags</div>
     </div>
   );
 }

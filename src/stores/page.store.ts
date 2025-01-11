@@ -18,4 +18,3 @@ const usePageStore = create<PageStore>(() => ({
 
 export { Page, usePageStore };
 export type { PageStore };
-

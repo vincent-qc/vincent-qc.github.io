@@ -8,8 +8,7 @@ const fadeUp = (y: number) => {
       y: 0,
       opacity: 1,
     },
-  }
+  };
 };
 
 export { fadeUp };
-

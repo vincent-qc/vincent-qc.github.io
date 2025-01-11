@@ -1,15 +1,14 @@
-
-
 export const projects = [
   {
     name: "EduBeyond",
-    description: "An EdTech startup that built LLM powered Learning Management Systems.", 
+    description:
+      "An EdTech startup that built LLM powered Learning Management Systems.",
     image: "../../assets/",
     tags: {
       license: "MIT",
       languages: ["python"],
       libraries: ["PGVector", "OpenAI SDK"],
-    }
+    },
   },
   {
     name: "Py0",
@@ -19,7 +18,7 @@ export const projects = [
       license: "MIT",
       languages: ["python"],
       libraries: ["PGVector", "OpenAI SDK"],
-    }
+    },
   },
   {
     name: "BTDExp",
@@ -29,7 +28,7 @@ export const projects = [
       license: "MIT",
       languages: ["python"],
       libraries: ["PGVector", "OpenAI SDK"],
-    }
+    },
   },
   {
     name: "Blockout",
@@ -39,8 +38,7 @@ export const projects = [
       license: "MIT",
       languages: ["python"],
       libraries: ["PGVector", "OpenAI SDK"],
-    }
-
+    },
   },
   {
     name: "Neobot",
@@ -50,7 +48,7 @@ export const projects = [
       license: "MIT",
       languages: ["python"],
       libraries: ["PGVector", "OpenAI SDK"],
-    }
+    },
   },
   {
     name: "vsHacks",
@@ -60,6 +58,6 @@ export const projects = [
       license: "MIT",
       languages: ["python"],
       libraries: ["PGVector", "OpenAI SDK"],
-    }
+    },
   },
 ];

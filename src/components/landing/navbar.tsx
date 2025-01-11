@@ -5,7 +5,7 @@ import { Page, usePageStore } from "../../stores/page.store";
 
 const NavbarButton = ({ text, page }: { text: string; page: Page }) => {
   const { current } = usePageStore(
-    useShallow((state) => ({ current: state.page }))
+    useShallow((state) => ({ current: state.page })),
   );
 
   return (
@@ -23,7 +23,7 @@ const NavbarButton = ({ text, page }: { text: string; page: Page }) => {
       style={{
         borderBottomColor: page === current ? "#FFFFFFFF" : "#00000000",
       }}
-      className="text-lg cursor-pointer border-b-2 transition-all"
+      className="cursor-pointer border-b-2 text-lg transition-all"
     >
       {text}
     </motion.div>
@@ -43,7 +43,7 @@ export default function Navbar() {
         duration: 1,
         delay: 1,
       }}
-      className="flex flex-row justify-between gap-4 items-center w-fit"
+      className="flex w-fit flex-row items-center justify-between gap-4"
     >
       <NavbarButton text="who am i" page={Page.ABOUT} />
       <NavbarButton text="my work" page={Page.PROJECTS} />

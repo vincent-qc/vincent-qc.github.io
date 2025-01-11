@@ -17,7 +17,7 @@ export default function ProjectPage() {
       transition={{
         duration: 0.5,
       }}
-      className="flex flex-col gap-4 h-full p-4 w-full items-start"
+      className="flex h-full w-full flex-col items-start gap-4 p-4"
     >
       {projects.map((project) => (
         <ProjectCard {...project} />

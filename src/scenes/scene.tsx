@@ -14,7 +14,7 @@ function Scene() {
   const unit = useUnitSize();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   return (
-    <div className="w-full h-full flex justify-center items-center p-4">
+    <div className="flex h-full w-full items-center justify-center p-4">
       <Canvas
         orthographic
         camera={{
