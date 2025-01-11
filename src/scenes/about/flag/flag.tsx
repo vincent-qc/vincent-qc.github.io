@@ -46,7 +46,7 @@ const LeafMesh = ({
         <extrudeGeometry args={[leaf, { depth: 2, bevelEnabled: false }]} />
         <meshBasicMaterial color="#BB1010" />
       </mesh>
-      <mesh scale={scale} position={[0, 0, 2]}>
+      <mesh scale={scale} position={[0, 0, 2.01]}>
         <shapeGeometry args={[leaf]} />
         <meshBasicMaterial color="#DD1010" />
       </mesh>
