@@ -23,9 +23,11 @@
 //         <boxGeometry args={[8, 2, 1]} />
 //       </mesh>
 
+import { GLASS_BLUE } from "../../shared/colors";
+
 //       {/* Upper Window */}
 //       <mesh position={[0, 5.5, -0]}>
-//         <meshStandardMaterial color={"#106070"} opacity={0.5} transparent />
+//         <meshStandardMaterial color={GLASS_BLUE} opacity={0.5} transparent />
 //         <boxGeometry args={[8, 8, 1]} />
 //       </mesh>
 
@@ -45,7 +47,7 @@
 
 //       {/* Lower Window */}
 //       <mesh position={[0, -5.5, -0]}>
-//         <meshStandardMaterial color={"#106070"} opacity={0.5} transparent />
+//         <meshStandardMaterial color={GLASS_BLUE} opacity={0.5} transparent />
 //         <boxGeometry args={[8, 8, 0.5]} />
 //       </mesh>
 //     </group>
@@ -81,7 +83,7 @@ const WindowNormalMesh = ({
 
       {/* Window */}
       <mesh position={[0, 0, inverted ? -1 : 0]}>
-        <meshStandardMaterial color={"#106070"} opacity={0.5} transparent />
+        <meshStandardMaterial color={GLASS_BLUE} opacity={0.5} transparent />
         <boxGeometry args={[8, 8, 1]} />
       </mesh>
     </group>
@@ -118,7 +120,7 @@ const WindowFullMesh = ({
       </mesh>
       {/* Window */}
       <mesh position={[0, 0, -0.5]}>
-        <meshStandardMaterial color={"#106070"} opacity={0.5} transparent />
+        <meshStandardMaterial color={GLASS_BLUE} opacity={0.5} transparent />
         <boxGeometry args={[12, 8, 1]} />
       </mesh>
     </group>

@@ -1,3 +1,4 @@
+import { GATES_BLACK } from "../../shared/colors";
 import { WindowNormalMesh } from "./windows";
 
 export default function LowerLayerMesh({
@@ -10,7 +11,7 @@ export default function LowerLayerMesh({
   return (
     <group position={position} scale={scale}>
       <mesh>
-        <meshStandardMaterial color={"#3F3F3F"} />
+        <meshStandardMaterial color={GATES_BLACK} />
         <boxGeometry args={[32, 12, 32]} />
       </mesh>
       {/* Left face windows */}

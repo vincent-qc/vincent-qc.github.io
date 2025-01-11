@@ -12,7 +12,13 @@ export default function HammerschlagMesh({
   rotation?: number;
 }) {
   return (
-    <group scale={scale} position={position} rotation={[0, rotation || 0, 0]}>
+    <group
+      scale={scale}
+      position={position}
+      rotation={[0, rotation || 0, 0]}
+      castShadow
+      receiveShadow
+    >
       <FrontMesh scale={[1, 1, 1]} position={[0, 0, 0]} />
       <CenterMesh scale={[1, 1, 1]} position={[0, 8, -21]} />
       <WingMesh scale={[1, 1, 1]} position={[19, 6, -21]} />

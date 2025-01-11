@@ -40,7 +40,12 @@ export default function SwitchMesh({
   rotation?: number;
 }) {
   return (
-    <group scale={scale} position={position} rotation={[0, rotation || 0, 0]}>
+    <group
+      scale={scale}
+      position={position}
+      rotation={[0, rotation || 0, 0]}
+      castShadow
+    >
       {/* Body and Screen */}
       <mesh>
         <boxGeometry args={[12, 8, 1.5]} />

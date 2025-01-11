@@ -1,3 +1,4 @@
+import { GATES_BLACK, GLASS_BLUE } from "../../shared/colors";
 import { WindowFullMesh, WindowNormalMesh } from "./windows";
 
 export default function UpperLayerMesh({
@@ -11,18 +12,18 @@ export default function UpperLayerMesh({
     <group position={position} scale={scale}>
       {/* Base */}
       <mesh position={[0, 0, 0]}>
-        <meshStandardMaterial color={"#3F3F3F"} />
+        <meshStandardMaterial color={GATES_BLACK} />
         <boxGeometry args={[32, 2, 32]} />
       </mesh>
       <mesh position={[-8, 5, 21]}>
-        <meshStandardMaterial color={"#3F3F3F"} />
+        <meshStandardMaterial color={GATES_BLACK} />
         <boxGeometry args={[16, 12, 10]} />
       </mesh>
 
       {/* Window Block */}
       <mesh position={[8, 5, 10]}>
         <boxGeometry args={[16, 8, 12]} />
-        <meshStandardMaterial color={"#106070"} transparent opacity={0.5} />
+        <meshStandardMaterial color={GLASS_BLUE} transparent opacity={0.5} />
       </mesh>
 
       {/* Window Panes */}
@@ -44,33 +45,33 @@ export default function UpperLayerMesh({
       <group>
         <mesh position={[8, 5, -6]}>
           <boxGeometry args={[16, 8, 20]} />
-          <meshStandardMaterial color={"#3F3F3F"} />
+          <meshStandardMaterial color={GATES_BLACK} />
         </mesh>
         <mesh position={[-8, 5, -8]}>
           <boxGeometry args={[16, 8, 16]} />
-          <meshStandardMaterial color={"#3F3F3F"} />
+          <meshStandardMaterial color={GATES_BLACK} />
         </mesh>
         <mesh position={[-8, 5, 8]}>
           <boxGeometry args={[16, 8, 16]} />
-          <meshStandardMaterial color={"#3F3F3F"} />
+          <meshStandardMaterial color={GATES_BLACK} />
         </mesh>
       </group>
 
       {/* Top */}
       <mesh position={[0, 10, 0]}>
-        <meshStandardMaterial color={"#3F3F3F"} />
+        <meshStandardMaterial color={GATES_BLACK} />
         <boxGeometry args={[32, 2, 32]} />
       </mesh>
       <mesh position={[4, 14, 20]}>
-        <meshStandardMaterial color={"#3F3F3F"} />
+        <meshStandardMaterial color={GATES_BLACK} />
         <boxGeometry args={[12, 2, 12]} />
       </mesh>
       <mesh position={[-1, 12, 20]}>
-        <meshStandardMaterial color={"#3F3F3F"} />
+        <meshStandardMaterial color={GATES_BLACK} />
         <boxGeometry args={[2, 2, 12]} />
       </mesh>
       <mesh position={[4, 12, 15]}>
-        <meshStandardMaterial color={"#3F3F3F"} />
+        <meshStandardMaterial color={GATES_BLACK} />
         <boxGeometry args={[12, 2, 2]} />
       </mesh>
 

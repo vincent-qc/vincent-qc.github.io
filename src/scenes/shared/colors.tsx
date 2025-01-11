@@ -1,4 +1,4 @@
-const GATES_BLACK = "#000000";
+const GATES_BLACK = "#2F2F2F";
 const GLASS_BLUE = "#106070";
 
 export { GATES_BLACK, GLASS_BLUE };

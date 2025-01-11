@@ -17,6 +17,7 @@ function Scene() {
     <div className="flex h-full w-full items-center justify-center p-4">
       <Canvas
         orthographic
+        shadows
         camera={{
           position: [10, 10, 10],
           near: -2000,
@@ -31,13 +32,13 @@ function Scene() {
         </EffectComposer>
 
         {/* Lighting */}
-        <ambientLight intensity={Math.PI / 2} />
-        <directionalLight position={[100, 100, 0]} intensity={Math.PI / 2} />
-        <directionalLight position={[0, 100, 0]} intensity={Math.PI / 2} />
+        <ambientLight intensity={0.6} />
+        <directionalLight position={[100, 100, 0]} intensity={3} castShadow />
+        <directionalLight position={[0, 100, 50]} intensity={2} />
 
         {/* Scene switcher */}
         <directionalLight position={[-100, -100, 0]} intensity={Math.PI / 2} />
-        <mesh scale={[unit, unit, unit]}>
+        <mesh scale={[unit, unit, unit]} receiveShadow>
           <AboutScene />
         </mesh>
       </Canvas>

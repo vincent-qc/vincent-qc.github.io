@@ -23,7 +23,7 @@ export default function FrontMesh({
   }, []);
 
   return (
-    <group scale={scale} position={position}>
+    <group scale={scale} position={position} castShadow receiveShadow>
       {/* Roof */}
       <FrontRoofMesh scale={[1, 1, 1]} position={[0, 12, 5]} />
 
@@ -40,7 +40,7 @@ export default function FrontMesh({
       </mesh>
 
       {/* Rest of Body */}
-      <mesh position={[0, 6, -5]}>
+      <mesh position={[0, 6, -5]} castShadow receiveShadow>
         <boxGeometry args={[16, 12, 10]} />
         <meshStandardMaterial color="#E7D1B1" />
       </mesh>

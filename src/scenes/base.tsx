@@ -5,9 +5,9 @@ export default function Base() {
   const meshRef = useRef<Mesh>(null);
 
   return (
-    <mesh ref={meshRef}>
+    <mesh ref={meshRef} receiveShadow>
       <boxGeometry args={[20, 1, 20]} />
-      <meshStandardMaterial color={"#808080"} />
+      <meshPhongMaterial color={"#808080"} />
     </mesh>
   );
 }
