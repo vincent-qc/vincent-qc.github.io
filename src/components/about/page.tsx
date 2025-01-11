@@ -32,6 +32,7 @@ export default function AboutPage() {
           duration: 0.5,
           delay: 0.3,
         }}
+        className="leading-8"
       >
         I'm Vincent Qi, a CS student at Carnegie Mellon University,
         <br /> and Ex-Founding SWE at EduBeyond.
@@ -48,13 +49,11 @@ export default function AboutPage() {
         retrieval models.
         <br />
         <br />
-        As for fun, I enjoy drawing, building games, and experimenting with
-        computer graphics (see left).
+        As for fun, I enjoy drawing, solving puzzles, and experimenting with
+        computer graphics.
         <br />
         <br />
-        Welcome to my page, where you can find my projects, artwork, and more :)
-        <br />I genuinely believe in building relationships, so feel free to
-        reach out!
+        Welcome to my page, enjoy your stay, and feel free to reach out!
       </motion.p>
     </motion.div>
   );
