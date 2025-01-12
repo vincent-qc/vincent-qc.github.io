@@ -38,9 +38,15 @@ const PanelMesh = ({
 }) => {
   const materialRef = useRef<THREE.MeshStandardMaterial>(null);
   const color = useRef(initialColor);
+  const target = useRef(0);
 
   useFrame(() => {
-    color.current = (color.current + 0.5) % 360;
+    color.current += 0.5;
+    if (target.current > 0) {
+      color.current += 3;
+      target.current -= 3;
+    }
+    color.current = color.current % 360;
     materialRef.current?.color.set(numberToRGB(color.current));
     materialRef.current?.emissive.set(numberToRGB(color.current));
   });
@@ -60,8 +66,7 @@ const PanelMesh = ({
     <group scale={scale} position={position} rotation={[0, 0, rotation || 0]}>
       <mesh
         onClick={() => {
-          color.current = (color.current + 60) % 360;
-          materialRef.current?.color.set(numberToRGB(color.current));
+          target.current = 60;
         }}
       >
         <extrudeGeometry args={[triangle, { depth: 2, bevelEnabled: false }]} />
