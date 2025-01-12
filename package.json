@@ -12,6 +12,7 @@
     "deploy": "pnpm run build && gh-pages -d dist"
   },
   "dependencies": {
+    "@react-spring/three": "^9.7.5",
     "@react-three/drei": "^9.120.6",
     "@react-three/fiber": "^8.17.10",
     "@react-three/postprocessing": "^2.16.6",

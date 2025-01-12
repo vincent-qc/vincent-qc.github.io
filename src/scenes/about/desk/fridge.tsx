@@ -66,7 +66,7 @@ export default function FridgeMesh({
           <meshStandardMaterial
             color="#FFFFFF"
             emissive={"white"}
-            emissiveIntensity={2}
+            emissiveIntensity={1.3}
           />
         </mesh>
         <mesh position={[0, 0.5, 4]}>
@@ -74,7 +74,7 @@ export default function FridgeMesh({
           <meshStandardMaterial
             color="#FFFFFF"
             emissive={"white"}
-            emissiveIntensity={2}
+            emissiveIntensity={1.3}
           />
         </mesh>
         <mesh position={[4, 5, 4]}>
@@ -82,7 +82,7 @@ export default function FridgeMesh({
           <meshStandardMaterial
             color="#FFFFFF"
             emissive={"white"}
-            emissiveIntensity={2}
+            emissiveIntensity={1.3}
           />
         </mesh>
         <mesh position={[-4, 5, 4]}>
@@ -90,7 +90,7 @@ export default function FridgeMesh({
           <meshStandardMaterial
             color="#FFFFFF"
             emissive={"white"}
-            emissiveIntensity={2}
+            emissiveIntensity={1.3}
           />
         </mesh>
       </group>
