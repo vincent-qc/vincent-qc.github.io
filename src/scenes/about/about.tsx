@@ -1,6 +1,5 @@
 import { FloorBase, GrassBase } from "./base";
 import OrganizedDeskMesh from "./desk/desk";
-import FridgeMesh from "./desk/fridge";
 import FlagMesh from "./flag/flag";
 import GatesMesh from "./gates/gates";
 import HammerschlagMesh from "./hammerschlag/hammerschlag";
@@ -18,7 +17,6 @@ export default function AboutScene() {
         <FlagMesh scale={[0.225, 0.225, 0.225]} position={[-11, 8, 4]} />
       </GrassBase>
       <FloorBase>
-        <FridgeMesh scale={[0.64, 0.65, 0.64]} position={[-7, 0.75, -7]} />
         <GatesMesh scale={[0.2, 0.2, 0.2]} position={[-7, 8.7, -7]} />
         <OrganizedDeskMesh
           scale={[0.35, 0.35, 0.35]}
