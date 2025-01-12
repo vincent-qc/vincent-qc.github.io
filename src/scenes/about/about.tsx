@@ -22,7 +22,7 @@ export default function AboutScene() {
           scale={[0.35, 0.35, 0.35]}
           position={[3.25, 4.85, -6.5]}
         />
-        <LightMesh scale={[0.175, 0.175, 0.175]} position={[3.5, 6, -11]} />
+        <LightMesh scale={[0.175, 0.175, 0.175]} position={[3.5, 5.5, -11]} />
       </FloorBase>
     </group>
   );
