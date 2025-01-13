@@ -17,7 +17,7 @@ export default function AboutScene() {
         />
         <FlagMesh scale={[0.225, 0.225, 0.225]} position={[-11, 8, 4]} />
         <DuckMesh
-          scale={[0.5, 0.5, 0.5]}
+          scale={[0.4, 0.4, 0.4]}
           position={[-3.5, 0.9, 7.8]}
           rotation={-Math.PI / 8}
         />
