@@ -66,7 +66,7 @@ const PanelMesh = ({
     <group scale={scale} position={position} rotation={[0, 0, rotation || 0]}>
       <mesh
         onClick={() => {
-          target.current = 60;
+          target.current += 60;
         }}
       >
         <extrudeGeometry args={[triangle, { depth: 2, bevelEnabled: false }]} />
