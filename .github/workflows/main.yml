@@ -22,10 +22,7 @@ jobs:
           node-version: 20
 
       - name: Install Dependencies
-        run: |
-        npm install
-        npm run build
-        run: echo "www.vincentqi.dev" > ./dist/CNAME
+        run: npm install && npm run build && echo "www.vincentqi.dev" > ./dist/CNAME
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
