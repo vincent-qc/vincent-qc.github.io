@@ -14,7 +14,7 @@ jobs:
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
@@ -22,16 +22,13 @@ jobs:
           node-version: 20
 
       - name: Install Dependencies
-        run: npm install
-
-      - name: Build the React App
-        run: npm run build
-
-      - name: Configure Custom Domain
+        run: |
+        npm install
+        npm run build
         run: echo "www.vincentqi.dev" > ./dist/CNAME
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          folder: ./dist
