@@ -25,7 +25,13 @@ function Scene() {
         ref={canvasRef}
       >
         {/* Scene effects */}
-        <OrbitControls />
+        <OrbitControls
+          enablePan={false}
+          enableZoom={false}
+          maxPolarAngle={Math.PI / 2}
+          maxAzimuthAngle={Math.PI / 2}
+          minAzimuthAngle={0}
+        />
         <EffectComposer>
           <Bloom mipmapBlur luminanceThreshold={1} levels={1} intensity={1} />
           <ToneMapping />

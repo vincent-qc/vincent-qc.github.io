@@ -1,7 +1,3 @@
-import { useFrame } from "@react-three/fiber";
-import { useRef } from "react";
-import * as THREE from "three";
-import { bounce } from "../../shared/animations";
 import CupMesh from "./cup";
 import LaptopMesh from "./laptop";
 import SwitchMesh from "./switch";
@@ -52,29 +48,8 @@ export default function OrganizedDeskMesh({
   scale: [number, number, number];
   position: [number, number, number];
 }) {
-  const bounceRef = useRef(100);
-  const meshRef = useRef<THREE.Mesh>(null);
-
-  useFrame(() => {
-    if (bounceRef.current >= 100) {
-      bounceRef.current = 100;
-      return;
-    }
-    bounceRef.current += 1.5;
-    meshRef.current!.position.y = position[1] + bounce(bounceRef.current, 1);
-  });
-
   return (
-    <mesh
-      ref={meshRef}
-      position={position}
-      scale={scale}
-      receiveShadow
-      onClick={(event) => {
-        if (bounceRef.current === 100) bounceRef.current = 0;
-        event.stopPropagation();
-      }}
-    >
+    <mesh position={position} scale={scale} receiveShadow>
       <DeskMesh scale={[1, 1, 1]} position={[0, 0, 0]} />
       <LaptopMesh scale={[0.35, 0.35, 0.35]} position={[0, 1.25, -5]} />
       <CupMesh scale={[0.5, 0.5, 0.5]} position={[10, 3, -3]} />

@@ -24,12 +24,14 @@ const TagCard = ({
 export default function ProjectCard({
   name,
   description,
+  link,
   image,
   tags,
   index,
 }: {
   name: string;
   description: string;
+  link: string;
   image?: string;
   tags: { license?: string; languages: string[]; libraries: string[] };
   index: number;
@@ -49,7 +51,8 @@ export default function ProjectCard({
         duration: 1,
         delay: 0.2 + 0.2 * index,
       }}
-      className="flex h-full w-full flex-col gap-4 rounded-xl bg-[#1D1D1D] p-4 transition-colors hover:bg-[#202020]"
+      className="flex h-full w-full cursor-pointer flex-col gap-4 rounded-xl bg-[#1D1D1D] p-4 transition-colors hover:bg-[#202020]"
+      onClick={() => window.open(link, "_blank")}
     >
       <div className="flex w-full flex-row gap-4">
         <img src={image} alt={name} className="h-16 w-16 rounded-xl" />

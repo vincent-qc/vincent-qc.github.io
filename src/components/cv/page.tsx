@@ -2,31 +2,46 @@ import { motion } from "motion/react";
 
 const CVSection = ({
   title,
+  delay,
   children,
 }: {
   title: string;
+  delay?: number;
   children: React.ReactNode;
 }) => {
   return (
-    <div className="flex flex-col gap-1">
-      <h1 className="border-b-2 border-neutral-300 text-base font-semibold">
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 0.5,
+        delay: delay || 0,
+      }}
+      className="flex flex-col gap-1"
+    >
+      <h1 className="border-b-2 border-neutral-300 text-lg font-semibold">
         {title}
       </h1>
       <div className="w-full pl-4">{children}</div>
-    </div>
+    </motion.div>
   );
 };
 
 export default function CvPage() {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
+    <motion.a
+      initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="flex w-full flex-col gap-2 rounded-xl bg-[#1D1D1D] px-4 py-2 transition-colors hover:bg-[#202020]"
+      className="flex w-full flex-col gap-2 overflow-auto rounded-xl bg-[#1D1D1D] px-6 py-4 text-white transition-colors hover:bg-[#202020] hover:text-white"
+      style={{
+        scrollbarWidth: "none",
+      }}
+      href="/cv/cv.pdf"
+      download
     >
-      <CVSection title="Education">
-        <div className="flex flex-row justify-between text-sm">
+      <CVSection title="Education" delay={0.4}>
+        <div className="flex flex-row justify-between">
           <div className="flex flex-col">
             <p>Carnegie Mellon University</p>
             <p className="text-xs">BS in Computer Science</p>
@@ -38,8 +53,8 @@ export default function CvPage() {
         </div>
       </CVSection>
 
-      <CVSection title="Experience">
-        <div className="flex flex-row justify-between text-sm">
+      <CVSection title="Experience" delay={0.6}>
+        <div className="flex flex-row justify-between">
           <div className="flex flex-col">
             <p>Fullstack Founding Software Engineer</p>
             <p className="text-xs">EduBeyond Education Inc.</p>
@@ -49,7 +64,7 @@ export default function CvPage() {
             <p className="text-xs"> July 2022 - Jan 2025</p>
           </div>
         </div>
-        <ul className="mt-1 flex list-disc flex-col gap-1 pl-4 text-[10px]">
+        <ul className="mt-1 flex list-disc flex-col gap-1 pl-4 text-xs">
           <li>
             Developed EduBeyond’s new complete fullstack Learning Management
             System software in 2 months.
@@ -76,49 +91,81 @@ export default function CvPage() {
         </ul>
       </CVSection>
 
-      <CVSection title="Projects">
-        <div className="flex flex-row justify-between text-sm">
+      <CVSection title="Projects" delay={0.8}>
+        <div className="flex flex-col gap-2">
           <div className="flex flex-col">
-            <p>OpenAI GPT-3 Chatbot</p>
-            <p className="text-xs">Personal Project</p>
+            <p>EduBeyond</p>
+            <ul className="mt-1 flex list-disc flex-col gap-1 pl-4 text-xs">
+              <li>
+                Deployed globally to Indonesia’s largest telecommunications
+                company with over $400M ARR.
+              </li>
+              <li>
+                Formally endorsed by the United Nations and the Office of the
+                Presidency of Indonesia as a high impact EdTech startup.
+              </li>
+              <li>
+                Independent Software Vendor (ISV) partner with Google and
+                Amazon’s Edstart portfolio.
+              </li>
+              <li>
+                Won 1st at global Moonshot awards (1st of 1500 companies),
+                finalist for Samsung’s Solve for Tomorrow
+              </li>
+            </ul>
           </div>
-          <div className="flex flex-col items-end">
-            <p>Remote</p>
-            <p className="text-xs">Jan 2021 - Present</p>
+          <div className="flex flex-col">
+            <p>Py0</p>
+            <ul className="mt-1 flex list-disc flex-col gap-1 pl-4 text-xs">
+              <li>
+                Developed a tree-walking interpreter for a python-like language
+                using python.
+              </li>
+              <li>
+                Engineered custom token lexer and parser to implement built-in
+                syntax for <code>assert</code>, <code>requires</code>,{" "}
+                <code>loop_invariant</code>, and <code>ensures</code> keywords.
+              </li>
+            </ul>
+          </div>
+          <div className="flex flex-col">
+            <p>Py0</p>
+            <ul className="mt-1 flex list-disc flex-col gap-1 pl-4 text-xs">
+              <li>
+                Built and published a Minecraft mod with Java and the Forge API
+                that adds a multiplayer bingo minigame.
+              </li>
+              <li>
+                Engineered a custom network manager to handle packet delivery
+                and synchronization across several game clients.
+              </li>
+              <li>
+                Utilized Gradle to compile and deploy mod across multiple
+                Minecraft versions.
+              </li>
+            </ul>
           </div>
         </div>
-        <ul className="mt-1 flex list-disc flex-col gap-1 pl-4 text-[10px]">
-          <li>
-            Developed a GPT-3 chatbot using OpenAI’s GPT-3 API to generate
-            human-like responses to user input.
-          </li>
-          <li>
-            Integrated chatbot with React frontend and Express backend to
-            provide a seamless user experience.
-          </li>
-          <li>
-            Implemented a custom token lexer to convert OpenAI SDK output from
-            XML to real-time React components.
-          </li>
-        </ul>
       </CVSection>
 
-      <CVSection title="Skills">
-        <div className="flex flex-col text-xs">
+      <CVSection title="Skills" delay={1}>
+        <div className="flex flex-col gap-1 text-sm">
           <p>
-            <b>Languages:</b> A,B,C
+            <b>Languages:</b> TypeScript/JavaScript, Python, Java, C++, Swift,
+            C, C#, HTML/CSS
           </p>
           <p>
-            <b>Frameworks:</b> A,B,C
+            <b>Frameworks:</b> React, Next, Node.js, Express, OpenAI SDK,
+            TailwindUI, SwiftUI, Three.js
           </p>
           <p>
-            <b>Databases:</b> A,B,C
+            <b>Databases:</b> PostgresSQL, MongoDB, PineconeDB, PGVector
           </p>
           <p>
-            <b>Tools:</b> A,B,C
+            <b>Tools:</b> Git, Vercel, Docker, AWS, Gradle, Websocket
           </p>
         </div>
       </CVSection>
-    </motion.div>
+    </motion.a>
   );
 }
