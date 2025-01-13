@@ -2,7 +2,12 @@ import { motion } from "motion/react";
 
 export default function AboutPage() {
   return (
-    <motion.div className="flex h-full w-full flex-col items-start gap-2 p-4">
+    <motion.div
+      className="flex h-full w-full flex-col items-start gap-2 overflow-auto p-4"
+      style={{
+        scrollbarWidth: "none",
+      }}
+    >
       <motion.p
         initial={{
           opacity: 0,
