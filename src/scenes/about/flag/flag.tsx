@@ -42,7 +42,7 @@ const LeafMesh = ({
   }, []);
   return (
     <group scale={scale} position={position} rotation={[0, rotation || 0, 0]}>
-      <mesh position={[0, 6, 1]} scale={scale}>
+      <mesh position={[0, 6, 0]} scale={scale}>
         {/* <extrudeGeometry args={[leaf, { depth: 2, bevelEnabled: false }]} /> */}
         <boxGeometry args={[22, 22, 2]} />
         <meshBasicMaterial color="#F0F0F0" />
@@ -72,11 +72,7 @@ export default function FlagMesh({
         <meshStandardMaterial color="#CC1010" />
         <boxGeometry args={[2, 22, 10]} />
       </mesh>
-      <LeafMesh
-        scale={[1, 1, 1]}
-        position={[-1, 0, 0]}
-        rotation={Math.PI / 2}
-      />
+      <LeafMesh scale={[1, 1, 1]} position={[0, 0, 0]} rotation={Math.PI / 2} />
       <mesh position={[0, 6, -16]}>
         <meshStandardMaterial color="#CC1010" />
         <boxGeometry args={[2, 22, 10]} />
