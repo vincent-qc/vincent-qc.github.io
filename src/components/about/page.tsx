@@ -43,19 +43,19 @@ export default function AboutPage() {
         <br /> and Ex-Founding SWE at EduBeyond.
         <br />
         <br />
-        At 16, I helped found EduBeyond, an EdTech startup that built LLM
-        powered Learning Management Systems. I researched and developed an
-        education-oriented Retrieval Augmented Generation pipeline with Python,
-        PGVector, and the OpenAI SDK.
+        At 16, I started EduBeyond, an EdTech startup that built LLM powered
+        Learning Management Systems and earned UN recognition. I developed a
+        fullstack web app using next, and researched a novel education-oriented
+        RAG pipeline with Python, PGVector, and the OpenAI SDK.
         <br />
         <br />
-        My current software and research interests include foundation AI
-        systems, such as scalable vector databases, vectorization methods, and
-        retrieval models.
+        My current software and research interests include educational AI
+        systems, scalable vector databases, vectorization methods, and retrieval
+        models.
         <br />
         <br />
-        As for fun, I enjoy drawing, solving puzzles, and experimenting with
-        computer graphics.
+        As always, I enjoy drawing, skiing, solving puzzles, and experimenting
+        with computer graphics.
         <br />
         <br />
         Welcome to my page, enjoy your stay, and feel free to reach out!
