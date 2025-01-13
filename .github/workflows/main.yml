@@ -36,6 +36,8 @@ jobs:
         run: npm run build && echo "www.vincentqi.dev" > ./dist/CNAME
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist/
 
   deploy:
     environment:
