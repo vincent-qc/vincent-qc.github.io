@@ -19,7 +19,7 @@ export default function LandingPage() {
   useEffect(() => {
     setTimeout(() => {
       setShowPages(true);
-    }, 1800);
+    }, 1500);
   });
 
   return (

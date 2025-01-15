@@ -37,7 +37,7 @@ export default function CvPage() {
       style={{
         scrollbarWidth: "none",
       }}
-      href="/cv/cv.pdf"
+      href="/cv/vincent_qi_resume.pdf"
       download
     >
       <CVSection title="Education" delay={0.4}>
@@ -129,7 +129,7 @@ export default function CvPage() {
             </ul>
           </div>
           <div className="flex flex-col">
-            <p>Py0</p>
+            <p>Blockout</p>
             <ul className="mt-1 flex list-disc flex-col gap-1 pl-4 text-xs">
               <li>
                 Built and published a Minecraft mod with Java and the Forge API
