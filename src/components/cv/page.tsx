@@ -159,7 +159,7 @@ export default function CvPage() {
             TailwindUI, SwiftUI, Three.js
           </p>
           <p>
-            <b>Databases:</b> PostgresSQL, MongoDB, PineconeDB, PGVector
+            <b>Databases:</b> PostgreSQL, MongoDB, PineconeDB, PGVector
           </p>
           <p>
             <b>Tools:</b> Git, Vercel, Docker, AWS, Gradle, Websocket
