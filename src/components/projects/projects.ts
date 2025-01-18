@@ -1,3 +1,4 @@
+
 export const projects = [
   {
     name: "EduBeyond",
@@ -77,6 +78,17 @@ export const projects = [
     },
   },
   {
+    name: "QMK Firmware",
+    description: "Custom firmware for my mechanical keyboards",
+    link: "https://github.com/vincent-qc/qmk-keyboard-firmware",
+    image: "/projects/qmk.png",
+    tags: {
+      license: "mit",
+      languages: ["c"],
+      libraries: ["firmware", "qmk"],
+    },
+  },
+  {
     name: "vsHacks",
     description: "Co-founded Vancouver's largest high school hackathon",
     link: "https://vshacks.github.io/",
@@ -85,5 +97,5 @@ export const projects = [
       languages: ["javascript"],
       libraries: ["vanilla", "bootstrap"],
     },
-  },
+  }
 ];
