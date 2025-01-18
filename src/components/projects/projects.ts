@@ -54,16 +54,16 @@ export const projects = [
       libraries: ["pyautogui"],
     },
   },
-  // {
-  //   name: "Porfolio",
-  //   description: "This website! Built with threejs for blazingly fast renders",
-  //   image: "../../assets/",
-  //   tags: {
-  //     license: "mit",
-  //     languages: ["typescript"],
-  //     libraries: ["react", "vite", "three.js"],
-  //   },
-  // },
+  {
+    name: "Porfolio",
+    description: "This website!",
+    image: "/icon.png",
+    tags: {
+      license: "mit",
+      languages: ["typescript"],
+      libraries: ["react", "vite", "three.js"],
+    },
+  },
   {
     name: "Natural Selection Simulation",
     description: "Evolution through natural selection demonstrated through particle creatures",
