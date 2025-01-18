@@ -57,6 +57,7 @@ export const projects = [
   {
     name: "Porfolio",
     description: "This website!",
+    link: "https://www.vincentqi.dev/",
     image: "/icon.png",
     tags: {
       license: "mit",
