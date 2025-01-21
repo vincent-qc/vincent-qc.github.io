@@ -118,8 +118,8 @@ export default function CvPage() {
             <p>Py0</p>
             <ul className="mt-1 flex list-disc flex-col gap-1 pl-4 text-xs">
               <li>
-                Developed a tree-walking interpreter for a python-like language
-                using python.
+                Developed an AST tree-walking interpreter for a python-like
+                language using python.
               </li>
               <li>
                 Engineered custom token lexer and parser to implement built-in
