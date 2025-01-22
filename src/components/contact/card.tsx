@@ -35,8 +35,8 @@ export default function ContactCard({
         <img src={icon} className="p-10" />
       </div>
       <div className="flex flex-col justify-center p-4">
-        <h1 className="text-xl font-semibold">{name}</h1>
-        <p className="font-light">{user}</p>
+        <h1 className="text-lg font-semibold sm:text-xl">{name}</h1>
+        <p className="text-sm font-light sm:text-base">{user}</p>
       </div>
     </motion.div>
   );

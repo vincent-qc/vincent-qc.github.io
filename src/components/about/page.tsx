@@ -20,7 +20,7 @@ export default function AboutPage() {
         transition={{
           duration: 0.5,
         }}
-        className="text-2xl font-semibold"
+        className="text-xl font-semibold lg:text-2xl"
       >
         Hi there,
       </motion.p>
@@ -37,7 +37,7 @@ export default function AboutPage() {
           duration: 0.5,
           delay: 0.3,
         }}
-        className="leading-8"
+        className="text-sm leading-6 lg:text-base lg:leading-8"
       >
         I'm Vincent Qi, a CS student at Carnegie Mellon University,
         <br /> and Ex-Founding SWE at EduBeyond.
