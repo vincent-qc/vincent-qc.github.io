@@ -5,6 +5,7 @@ import Scene from "../../scenes/scene";
 
 import { useMediaQuery } from "usehooks-ts";
 import { PageStore, usePageStore } from "../../stores/page.store";
+import MobileWarning from "./mobile";
 import Namecard from "./namecard";
 import Navbar from "./navbar";
 import { pages } from "./navpages";
@@ -14,9 +15,10 @@ export default function LandingPage() {
   const [showPages, setShowPages] = useState(false);
   const [showScene, setShowScene] = useState(false);
 
-  const { page } = usePageStore(
+  const { page, showWarning } = usePageStore(
     useShallow((state: PageStore) => ({
       page: state.page,
+      showWarning: state.showWarning,
     })),
   );
 
@@ -30,28 +32,31 @@ export default function LandingPage() {
   });
 
   return (
-    <div className="flex h-screen w-screen flex-row font-poppins text-white">
-      {!isMobile && (
-        <div
+    <div className="flex h-screen w-screen flex-col font-poppins text-white">
+      {isMobile && showWarning && <MobileWarning />}
+      <div className="flex h-full w-full flex-row">
+        {!isMobile && (
+          <div
+            style={{
+              width: "50%",
+            }}
+          >
+            {showScene && <Scene />}
+          </div>
+        )}
+        <motion.div
           style={{
-            width: "50%",
+            width: isMobile ? "100%" : "50%",
           }}
+          className="flex flex-col gap-4 py-20 pl-10 pr-20"
         >
-          {showScene && <Scene />}
-        </div>
-      )}
-      <motion.div
-        style={{
-          width: isMobile ? "100%" : "50%",
-        }}
-        className="flex flex-col gap-4 py-20 pl-10 pr-20"
-      >
-        <div className="flex flex-col items-end justify-center">
-          <Namecard />
-          <Navbar />
-        </div>
-        {showPages && pages.find((item) => item.page === page)?.component}
-      </motion.div>
+          <div className="flex flex-col items-end justify-center">
+            <Namecard />
+            <Navbar />
+          </div>
+          {showPages && pages.find((item) => item.page === page)?.component}
+        </motion.div>
+      </div>
     </div>
   );
 }
