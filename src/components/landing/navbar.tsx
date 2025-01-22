@@ -23,7 +23,7 @@ const NavbarButton = ({ text, page }: { text: string; page: Page }) => {
       style={{
         borderBottomColor: page === current ? "#FFFFFFFF" : "#00000000",
       }}
-      className="cursor-pointer border-b-2 text-[90%] transition-all lg:text-lg"
+      className="cursor-pointer border-b-2 text-[80%] transition-all sm:text-[90%] lg:text-lg"
     >
       {text}
     </motion.div>

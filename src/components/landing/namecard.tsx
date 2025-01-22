@@ -16,7 +16,7 @@ export default function Namecard() {
         delay: 0.5,
       }}
     >
-      <h1 className="text-[350%] font-semibold">
+      <h1 className="text-[250%] font-semibold sm:text-[350%]">
         Vincent{isMobile ? " Qi" : "'s Portfolio"}
       </h1>
     </motion.div>
