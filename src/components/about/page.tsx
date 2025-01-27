@@ -43,10 +43,18 @@ export default function AboutPage() {
         <br /> and Ex-Founding SWE at EduBeyond.
         <br />
         <br />
-        At 16, I started EduBeyond, an EdTech startup that built LLM powered
-        Learning Management Systems and earned UN recognition. I developed a
-        fullstack web app using next, and researched a novel education-oriented
-        RAG pipeline with Python, PGVector, and the OpenAI SDK.
+        At 16, I started{" "}
+        <a
+          href="https://edubeyond.ai/"
+          target="_blank"
+          className="text-white transition-colors hover:text-neutral-400"
+        >
+          EduBeyond
+        </a>
+        , an EdTech startup that built LLM powered Learning Management Systems
+        and earned UN recognition. I developed a fullstack web app using next,
+        and researched a novel education-oriented RAG pipeline with Python,
+        PGVector, and the OpenAI SDK.
         <br />
         <br />
         My current software and research interests include educational AI
@@ -58,7 +66,7 @@ export default function AboutPage() {
         with computer graphics.
         <br />
         <br />
-        Welcome to my page, enjoy your stay, and feel free to reach out!
+        Welcome to my page, and let's build the future together.
       </motion.p>
     </motion.div>
   );
