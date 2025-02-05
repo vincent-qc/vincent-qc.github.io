@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { base64encode, codeVerifier, sha256 } from "../../shared/spotify";
 import CupMesh from "./cup";
 import LaptopMesh from "./laptop";
 import SwitchMesh from "./switch";
@@ -48,6 +50,65 @@ export default function OrganizedDeskMesh({
   scale: [number, number, number];
   position: [number, number, number];
 }) {
+  useEffect(() => {
+    async function fetchData() {
+      const hashed = await sha256(codeVerifier);
+      const codeChallenge = base64encode(hashed);
+
+      const clientId = "fcd437e2ca6341bcae4b3dd4f858300d";
+      const redirectUri = "https://www.vincentqi.dev/";
+
+      const scope = "user-read-private user-read-email";
+      const authUrl = new URL("https://accounts.spotify.com/authorize");
+
+      // generated in the previous step
+      window.localStorage.setItem("code_verifier", codeVerifier);
+
+      const params = {
+        response_type: "code",
+        client_id: clientId,
+        scope,
+        code_challenge_method: "S256",
+        code_challenge: codeChallenge,
+        redirect_uri: redirectUri,
+      };
+
+      authUrl.search = new URLSearchParams(params).toString();
+      window.location.href = authUrl.toString();
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const code = urlParams.get("code");
+
+      const getToken = async (code: string) => {
+        // stored in the previous step
+        const codeVerifier = localStorage.getItem("code_verifier");
+
+        if (!codeVerifier) {
+          throw new Error("Code verifier is missing");
+        }
+
+        const payload = {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: new URLSearchParams({
+            client_id: clientId,
+            grant_type: "authorization_code",
+            code,
+            redirect_uri: redirectUri,
+            code_verifier: codeVerifier,
+          }),
+        };
+
+        const body = await fetch(url, payload);
+        const response = await body.json();
+
+        localStorage.setItem("access_token", response.access_token);
+      };
+    }
+    fetchData();
+  }, []);
   return (
     <mesh position={position} scale={scale} receiveShadow>
       <DeskMesh scale={[1, 1, 1]} position={[0, 0, 0]} />
