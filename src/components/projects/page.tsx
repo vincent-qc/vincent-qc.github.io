@@ -1,5 +1,5 @@
 import ProjectCard from "./card";
-import { projects } from "./projects";
+import projects from "./projects.json";
 
 export default function ProjectPage() {
   return (
