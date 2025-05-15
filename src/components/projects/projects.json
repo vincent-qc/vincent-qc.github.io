@@ -1,5 +1,15 @@
 [
   {
+    "name": "Stealth",
+    "description": "Revolutionizing NLP applications in gaming",
+    "link": "https://games-are-fun.github.io",
+    "image": "/projects/stealth.png",
+    "tags": {
+      "languages": ["csharp"],
+      "libraries": ["unity", "dotnet", "anthropic api"]
+    }
+  },
+  {
     "name": "EduBeyond",
     "description": "AI EdTech startup building on LLM powered Learning Management Systems",
     "link": "https://edubeyond.ai",
