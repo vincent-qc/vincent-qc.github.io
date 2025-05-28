@@ -40,7 +40,7 @@ export default function AboutPage() {
         className="text-sm leading-6 lg:text-base lg:leading-8"
       >
         I'm Vincent Qi, a CS student at Carnegie Mellon University,
-        <br /> and Ex-Founding SWE at EduBeyond.
+        <br /> and Prev. Founding SWE at EduBeyond.
         <br />
         <br />
         At 16, I started{" "}
@@ -57,9 +57,8 @@ export default function AboutPage() {
         PGVector, and the OpenAI SDK.
         <br />
         <br />
-        My current software and research interests include educational AI
-        systems, scalable vector databases, vectorization methods, and retrieval
-        models.
+        My current software and research interests include computer systems,
+        scalable vector databases, retrieval models, and game development.
         <br />
         <br />
         As always, I enjoy drawing, skiing, solving puzzles, and experimenting
