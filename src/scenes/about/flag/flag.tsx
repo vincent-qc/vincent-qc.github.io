@@ -43,13 +43,16 @@ const LeafMesh = ({
   return (
     <group scale={scale} position={position} rotation={[0, rotation || 0, 0]}>
       <mesh position={[0, 6, 0]} scale={scale}>
-        {/* <extrudeGeometry args={[leaf, { depth: 2, bevelEnabled: false }]} /> */}
         <boxGeometry args={[22, 22, 2]} />
         <meshBasicMaterial color="#F0F0F0" />
       </mesh>
       <mesh scale={scale} position={[0, 0, -1]}>
         <extrudeGeometry args={[leaf, { depth: 4, bevelEnabled: false }]} />
         <meshBasicMaterial color="#BB1010" />
+      </mesh>
+      <mesh scale={scale} position={[0, 0, 3.01]} rotation={[0, 0, 0]}>
+        <shapeGeometry args={[leaf]} />
+        <meshBasicMaterial color="#DD1010" />
       </mesh>
       <mesh scale={scale} position={[0, 0, 3.01]} rotation={[0, 0, 0]}>
         <shapeGeometry args={[leaf]} />
