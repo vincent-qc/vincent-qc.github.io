@@ -118,7 +118,7 @@ export default function OrganizedDeskMesh({
         position={[-12, 2.5, -5]}
         rotation={Math.PI / 6}
       />
-      <BridgeMesh scale={[1, 1, 1]} />
+      <BridgeMesh position={[1, 1, 1]} />
     </mesh>
   );
 }
