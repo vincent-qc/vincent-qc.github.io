@@ -23,8 +23,6 @@ function Scene() {
       >
         {/* Scene effects */}
         <OrbitControls
-          // enablePan={false}
-          // enableZoom={false}
           maxPolarAngle={Math.PI / 2}
           maxAzimuthAngle={Math.PI / 2}
           minAzimuthAngle={0}
