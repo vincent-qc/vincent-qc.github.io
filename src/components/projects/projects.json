@@ -60,7 +60,7 @@
     "tags": {
       "license": "mit",
       "languages": ["typescript", "javascript", "python"],
-      "libraries": ["next", "openai sdk", "flask", "mongo"]
+      "libraries": ["next", "openai sdk", "flask", "mongo", "chrome extension api"]
     }
   },
   {
