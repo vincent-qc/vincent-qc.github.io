@@ -40,32 +40,35 @@ export default function AboutPage() {
         className="text-sm leading-6 lg:text-base lg:leading-8"
       >
         I'm Vincent Qi, a CS student at Carnegie Mellon University,
-        <br /> and Prev. Founding SWE at EduBeyond.
+        <br /> and SWE at Mercor.
         <br />
         <br />
         At 16, I started{" "}
         <a
-          href="https://edubeyond.ai/"
+          href="https://futurity.work/"
           target="_blank"
           className="text-white transition-colors hover:text-neutral-400"
         >
-          EduBeyond
+          EduBeyond (now Futurity)
         </a>
-        , an EdTech startup that built LLM powered Learning Management Systems
-        and earned UN recognition. I developed a fullstack web app using next,
-        and researched a novel education-oriented RAG pipeline with Python,
-        PGVector, and the OpenAI SDK.
+        , an EdTech startup that built LLM powered Learning Management Systems.
+        I scaled the company, and eventually exited at 18. Afterwards, I worked
+        at{" "}
+        <a
+          href="https://context.ai/"
+          target="_blank"
+          className="text-white transition-colors hover:text-neutral-400"
+        >
+          Context
+        </a>
+        , where I developed an agentic office suite.
         <br />
         <br />
-        My current software and research interests include computer systems,
-        scalable vector databases, retrieval models, and game development.
+        As always, I enjoy drawing, skiing, competition programming, and
+        experimenting with computer graphics.
         <br />
         <br />
-        As always, I enjoy drawing, skiing, solving puzzles, and experimenting
-        with computer graphics.
-        <br />
-        <br />
-        Welcome to my page, and let's build the future together.
+        Welcome to my page, and feel free to reach out :)
       </motion.p>
     </motion.div>
   );

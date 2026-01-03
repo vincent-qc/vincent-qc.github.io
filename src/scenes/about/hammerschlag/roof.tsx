@@ -42,7 +42,12 @@ const FrontRoofMesh = ({
       </mesh>
       <mesh position={[0, 0, -13.7]}>
         <extrudeGeometry args={[edge, { depth: 13.7, bevelEnabled: false }]} />
-        <meshStandardMaterial color="#A0A0A0" />
+        <meshPhysicalMaterial
+          color="#A0A0A0"
+          metalness={0.2}
+          roughness={0.3}
+          reflectivity={0.2}
+        />
       </mesh>
       <mesh scale={[1.15, 1.15, 1.15]} position={[0, 0, -16]}>
         <extrudeGeometry args={[edge, { depth: 2, bevelEnabled: false }]} />
@@ -82,7 +87,12 @@ const WingRoofMesh = ({
       </mesh>
       <mesh position={[0, 0, left ? -15 : -17]}>
         <extrudeGeometry args={[roof, { depth: 16, bevelEnabled: false }]} />
-        <meshStandardMaterial color="#A0A0A0" />
+        <meshPhysicalMaterial
+          color="#A0A0A0"
+          metalness={0.2}
+          roughness={0.3}
+          reflectivity={0.2}
+        />
       </mesh>
     </group>
   );

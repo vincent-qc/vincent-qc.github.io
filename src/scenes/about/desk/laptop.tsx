@@ -1,5 +1,8 @@
+import { useEnvironment } from "@react-three/drei";
 import { useMemo } from "react";
 import * as THREE from "three";
+import { MeshPhysicalMaterial } from "three";
+
 export default function LaptopMesh({
   scale,
   position,
@@ -7,6 +10,21 @@ export default function LaptopMesh({
   scale: [number, number, number];
   position: [number, number, number];
 }) {
+  const envMap = useEnvironment({ preset: "city" });
+
+  const screenMaterial = useMemo(() => {
+    return new MeshPhysicalMaterial({
+      color: "#111111",
+      metalness: 1,
+      roughness: 0.05,
+      envMap: envMap,
+      envMapIntensity: 0.6,
+      clearcoat: 1,
+      clearcoatRoughness: 0,
+      reflectivity: 1,
+    });
+  }, [envMap]);
+
   const bodyShape = useMemo(() => {
     const shape = new THREE.Shape();
     shape.moveTo(16, 8);
@@ -43,11 +61,14 @@ export default function LaptopMesh({
         />
         <meshStandardMaterial color="#404040" />
       </mesh>
-      <mesh position={[0, 9, -4.1]} rotation={[(5 * Math.PI) / 6, 0, 0]}>
+      <mesh
+        position={[0, 9, -4.1]}
+        rotation={[(5 * Math.PI) / 6, 0, 0]}
+        material={screenMaterial}
+      >
         <extrudeGeometry
           args={[screenShape, { depth: 0.1, bevelEnabled: false }]}
         />
-        <meshStandardMaterial color="black" />
       </mesh>
 
       {/* Hinge */}

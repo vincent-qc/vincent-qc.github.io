@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import * as THREE from "three";
-import { GATES_BLACK, GLASS_BLUE } from "../../shared/colors";
+import { GATES_BLACK } from "../../shared/colors";
+import { useGlassMaterial } from "../../shared/materials";
 
 export default function MiddleLayerMesh({
   scale,
@@ -9,6 +10,8 @@ export default function MiddleLayerMesh({
   scale: [number, number, number];
   position: [number, number, number];
 }) {
+  const glassMaterial = useGlassMaterial();
+
   const shape = useMemo(() => {
     const shape = new THREE.Shape();
     shape.moveTo(-16, 18);
@@ -25,9 +28,12 @@ export default function MiddleLayerMesh({
         <extrudeGeometry args={[shape, { depth: 2, bevelEnabled: false }]} />
         <meshStandardMaterial color={GATES_BLACK} />
       </mesh>
-      <mesh position={[0, 2, 0]} rotation={[(3 * Math.PI) / 2, 0, 0]}>
+      <mesh
+        position={[0, 2, 0]}
+        rotation={[(3 * Math.PI) / 2, 0, 0]}
+        material={glassMaterial}
+      >
         <extrudeGeometry args={[shape, { depth: 8, bevelEnabled: false }]} />
-        <meshStandardMaterial color={GLASS_BLUE} transparent opacity={0.5} />
       </mesh>
       <mesh position={[0, 0, 0]} rotation={[(3 * Math.PI) / 2, 0, 0]}>
         <extrudeGeometry args={[shape, { depth: 2, bevelEnabled: false }]} />

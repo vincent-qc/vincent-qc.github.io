@@ -1,4 +1,5 @@
-import { GATES_BLACK, GLASS_BLUE } from "../../shared/colors";
+import { GATES_BLACK } from "../../shared/colors";
+import { useGlassMaterial } from "../../shared/materials";
 import { WindowFullMesh, WindowNormalMesh } from "./windows";
 
 export default function UpperLayerMesh({
@@ -8,6 +9,8 @@ export default function UpperLayerMesh({
   scale: [number, number, number];
   position: [number, number, number];
 }) {
+  const glassMaterial = useGlassMaterial();
+
   return (
     <group position={position} scale={scale}>
       {/* Base */}
@@ -21,9 +24,8 @@ export default function UpperLayerMesh({
       </mesh>
 
       {/* Window Block */}
-      <mesh position={[8, 5, 10]}>
+      <mesh position={[8, 5, 10]} material={glassMaterial}>
         <boxGeometry args={[16, 8, 12]} />
-        <meshStandardMaterial color={GLASS_BLUE} transparent opacity={0.5} />
       </mesh>
 
       {/* Window Panes */}

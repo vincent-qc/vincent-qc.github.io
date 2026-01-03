@@ -23,7 +23,7 @@
 //         <boxGeometry args={[8, 2, 1]} />
 //       </mesh>
 
-import { GLASS_BLUE } from "../../shared/colors";
+import { useGlassMaterial } from "../../shared/materials";
 
 //       {/* Upper Window */}
 //       <mesh position={[0, 5.5, -0]}>
@@ -65,6 +65,8 @@ const WindowNormalMesh = ({
   rotation?: number;
   inverted?: boolean;
 }) => {
+  const glassMaterial = useGlassMaterial();
+
   return (
     <group position={position} scale={scale} rotation={[0, rotation || 0, 0]}>
       {/* Frame */}
@@ -82,8 +84,7 @@ const WindowNormalMesh = ({
       </mesh>
 
       {/* Window */}
-      <mesh position={[0, 0, inverted ? -1 : 0]}>
-        <meshStandardMaterial color={GLASS_BLUE} opacity={0.5} transparent />
+      <mesh position={[0, 0, inverted ? -1 : 0]} material={glassMaterial}>
         <boxGeometry args={[8, 8, 1]} />
       </mesh>
     </group>
@@ -99,6 +100,8 @@ const WindowFullMesh = ({
   position: [number, number, number];
   rotation?: number;
 }) => {
+  const glassMaterial = useGlassMaterial();
+
   return (
     <group position={position} scale={scale} rotation={[0, rotation || 0, 0]}>
       {/* Frame */}
@@ -119,8 +122,7 @@ const WindowFullMesh = ({
         <boxGeometry args={[12, 2, 2]} />
       </mesh>
       {/* Window */}
-      <mesh position={[0, 0, -0.5]}>
-        <meshStandardMaterial color={GLASS_BLUE} opacity={0.5} transparent />
+      <mesh position={[0, 0, -0.5]} material={glassMaterial}>
         <boxGeometry args={[12, 8, 1]} />
       </mesh>
     </group>

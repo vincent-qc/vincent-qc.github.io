@@ -34,13 +34,18 @@ function Scene() {
 
         {/* Lighting */}
         <ambientLight intensity={0.6} />
-        <directionalLight position={[100, 100, 0]} intensity={3} castShadow />
-        <directionalLight position={[0, 100, 50]} intensity={2} />
+        <directionalLight position={[100, 100, 0]} intensity={1} castShadow />
+        <directionalLight position={[0, 100, 50]} intensity={1} />
 
         {/* Scene switcher */}
-        <directionalLight position={[-100, -100, 0]} intensity={Math.PI / 2} />
+        {/* <directionalLight position={[-100, -100, 0]} intensity={Math.PI / 2} /> */}
+        <pointLight position={[20, 20, 20]} intensity={1} decay={0.5} />
         <mesh scale={[unit, unit, unit]} receiveShadow>
           <AboutScene />
+          {/* <Suspense fallback={null}>
+            <BuildingMesh position={[0, 0, 0]} scale={[1, 1, 1]} />
+          </Suspense> */}
+          {/* <GatesMesh position={[0, 0, 0]} scale={[1, 1, 1]} /> */}
         </mesh>
       </Canvas>
     </div>

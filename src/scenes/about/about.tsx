@@ -51,7 +51,7 @@ export default function AboutScene() {
         />
       </GrassBase>
       <FloorBase>
-        <GatesMesh scale={[0.2, 0.2, 0.2]} position={[-7, 8.7, -7]} />
+        <GatesMesh scale={[0.15, 0.15, 0.15]} position={[-7, 8.3, -7]} />
         <OrganizedDeskMesh
           scale={[0.35, 0.35, 0.35]}
           position={[3.25, 4.85, -6.5]}
