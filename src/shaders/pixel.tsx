@@ -4,25 +4,25 @@ import * as THREE from "three";
 import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
 import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
 import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass.js";
+import coloredAsciiFrag from "../assets/shaders/colored-ascii.frag?raw";
 import commonVert from "../assets/shaders/common.vert?raw";
-import pixelFrag from "../assets/shaders/pixel.frag?raw";
 
-export const PixelShader = {
+export const ColoredAsciiShader = {
   uniforms: {
     tDiffuse: { value: null },
     uResolution: { value: new THREE.Vector2(1, 1) },
-    uPixelSize: { value: 2.0 },
+    uCharSize: { value: 4.0 },
   },
   vertexShader: commonVert,
-  fragmentShader: pixelFrag,
+  fragmentShader: coloredAsciiFrag,
 };
 
-export function PixelPostProcessing({
+export function ColoredAsciiPostProcessing({
   enabled,
-  pixelSize = 3.0,
+  charSize = 4.0,
 }: {
   enabled: boolean;
-  pixelSize?: number;
+  charSize?: number;
 }) {
   const { gl, scene, camera, size } = useThree();
 
@@ -32,19 +32,19 @@ export function PixelPostProcessing({
     renderPass.clearAlpha = 0;
     composer.addPass(renderPass);
 
-    const pixelPass = new ShaderPass(PixelShader);
-    pixelPass.uniforms.uResolution.value.set(size.width, size.height);
-    pixelPass.uniforms.uPixelSize.value = pixelSize;
-    composer.addPass(pixelPass);
+    const coloredAsciiPass = new ShaderPass(ColoredAsciiShader);
+    coloredAsciiPass.uniforms.uResolution.value.set(size.width, size.height);
+    coloredAsciiPass.uniforms.uCharSize.value = charSize;
+    composer.addPass(coloredAsciiPass);
 
     return composer;
-  }, [gl, scene, camera, size.width, size.height, pixelSize]);
+  }, [gl, scene, camera, size.width, size.height, charSize]);
 
   useEffect(() => {
     composer.setSize(size.width, size.height);
-    const pixelPass = composer.passes[1] as ShaderPass;
-    if (pixelPass?.uniforms?.uResolution) {
-      pixelPass.uniforms.uResolution.value.set(size.width, size.height);
+    const coloredAsciiPass = composer.passes[1] as ShaderPass;
+    if (coloredAsciiPass?.uniforms?.uResolution) {
+      coloredAsciiPass.uniforms.uResolution.value.set(size.width, size.height);
     }
   }, [composer, size]);
 

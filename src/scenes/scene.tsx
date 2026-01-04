@@ -1,50 +1,26 @@
 import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { Suspense, useState } from "react";
+import { Suspense, useMemo } from "react";
 import { useUnitSize } from "../hooks/useWindowSize";
 import { AsciiPostProcessing } from "../shaders/ascii";
-import { PixelPostProcessing } from "../shaders/pixel";
+import { ColoredAsciiPostProcessing } from "../shaders/pixel";
 import { SketchPostProcessing } from "../shaders/sketch";
+import { Page, usePageStore } from "../stores/page.store";
 import AboutScene from "./about/about";
-
-type EffectMode = "normal" | "sketch" | "ascii" | "pixel";
 
 function Scene() {
   const unit = useUnitSize();
-  const [effectMode, setEffectMode] = useState<EffectMode>("normal");
+  const page = usePageStore((state) => state.page);
 
-  const cycleEffect = () => {
-    setEffectMode((prev) => {
-      if (prev === "normal") return "sketch";
-      if (prev === "sketch") return "ascii";
-      if (prev === "ascii") return "pixel";
-      return "normal";
-    });
-  };
-
-  const getButtonLabel = () => {
-    switch (effectMode) {
-      case "normal":
-        return "◇ Normal";
-      case "sketch":
-        return "◈ Sketch";
-      case "ascii":
-        return "▣ ASCII";
-      case "pixel":
-        return "▦ Pixel";
-    }
-  };
+  const effect = useMemo(() => {
+    if (page === Page.ABOUT) return "normal";
+    if (page === Page.PROJECTS) return "ascii";
+    if (page === Page.CV) return "sketch";
+    if (page === Page.CONTACT) return "colored-ascii";
+  }, [page]);
 
   return (
     <div className="relative flex h-full w-full items-center justify-center p-4">
-      {/* Toggle Button */}
-      <button
-        onClick={cycleEffect}
-        className="absolute left-4 top-4 z-10 rounded-md border border-neutral-600 bg-neutral-800/80 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm transition-all hover:border-neutral-500 hover:bg-neutral-700/80"
-      >
-        {getButtonLabel()}
-      </button>
-
       <Canvas
         orthographic
         shadows
@@ -62,14 +38,17 @@ function Scene() {
           minAzimuthAngle={0}
         />
 
-        {/* Post-processing effects */}
+        {/* Post Processing */}
         <SketchPostProcessing
-          enabled={effectMode === "sketch"}
+          enabled={effect === "sketch"}
           threshold={0.15}
           lineWidth={1.0}
         />
-        <AsciiPostProcessing enabled={effectMode === "ascii"} charSize={4.0} />
-        <PixelPostProcessing enabled={effectMode === "pixel"} pixelSize={3.0} />
+        <AsciiPostProcessing enabled={effect === "ascii"} charSize={4.0} />
+        <ColoredAsciiPostProcessing
+          enabled={effect === "colored-ascii"}
+          charSize={4.0}
+        />
 
         {/* Lighting */}
         <ambientLight intensity={0.6} />
