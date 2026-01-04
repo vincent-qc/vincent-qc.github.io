@@ -65,4 +65,3 @@ export function SketchPostProcessing({
 
   return null;
 }
-

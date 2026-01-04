@@ -41,16 +41,16 @@ function Scene() {
         {/* Post Processing */}
         <SketchPostProcessing
           enabled={effect === "sketch"}
-          threshold={0.15}
-          lineWidth={1.0}
+          threshold={0.075}
+          lineWidth={0.5}
         />
         <AsciiPostProcessing enabled={effect === "ascii"} charSize={4.0} />
         <GlitchPostProcessing enabled={effect === "glitch"} intensity={0.6} />
 
         {/* Lighting */}
         <ambientLight intensity={0.6} />
-        <directionalLight position={[100, 100, 0]} intensity={2} castShadow />
-        <directionalLight position={[0, 100, 50]} intensity={2} />
+        <directionalLight position={[100, 100, 0]} intensity={1.8} castShadow />
+        <directionalLight position={[0, 100, 50]} intensity={1.8} />
         <pointLight position={[20, 20, 20]} intensity={1} decay={0.5} />
 
         {/* Scene */}
