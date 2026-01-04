@@ -13,16 +13,15 @@ export default function BuildingMesh({
 
   const glassMaterial = useMemo(() => {
     return new MeshPhysicalMaterial({
-      color: "#8ecae6",
-      metalness: 0.9,
-      roughness: 0.1,
+      color: "#5a90a4",
+      metalness: 1.0,
+      roughness: 0.0,
       envMap: envMap,
-      envMapIntensity: 0.8,
-      clearcoat: 0.8,
-      clearcoatRoughness: 0.1,
-      reflectivity: 1,
-      transparent: true,
-      opacity: 0.85,
+      envMapIntensity: 1.5,
+      clearcoat: 1.0,
+      clearcoatRoughness: 0.2,
+      reflectivity: 0.8,
+      transparent: false,
     });
   }, [envMap]);
 

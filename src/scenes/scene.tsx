@@ -1,6 +1,6 @@
 import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { Suspense, useMemo } from "react";
+import { Suspense, useEffect, useMemo, useState } from "react";
 import { useUnitSize } from "../hooks/useWindowSize";
 import { AsciiPostProcessing } from "../shaders/ascii";
 import { GlitchPostProcessing } from "../shaders/pixel";
@@ -8,16 +8,44 @@ import { SketchPostProcessing } from "../shaders/sketch";
 import { Page, usePageStore } from "../stores/page.store";
 import AboutScene from "./about/about";
 
+const CONTACT_EFFECTS = ["normal", "ascii", "sketch", "glitch"] as const;
+
 function Scene() {
   const unit = useUnitSize();
   const page = usePageStore((state) => state.page);
+  const [contactEffectIndex, setContactEffectIndex] = useState(0);
+
+  useEffect(() => {
+    if (page !== Page.CONTACT) return;
+
+    let timeoutId: number;
+
+    const scheduleNext = () => {
+      const duration = 500 + 4000 * Math.random();
+      timeoutId = window.setTimeout(() => {
+        let index = -1;
+        while (index === -1 || index === contactEffectIndex) {
+          index = Math.random() > 0.8 ? 3 : Math.floor(Math.random() * 3);
+        }
+        setContactEffectIndex(index);
+        scheduleNext();
+      }, duration);
+    };
+
+    scheduleNext(); // Start the first cycle
+
+    return () => {
+      if (timeoutId) clearTimeout(timeoutId);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [page]);
 
   const effect = useMemo(() => {
     if (page === Page.ABOUT) return "normal";
     if (page === Page.PROJECTS) return "ascii";
     if (page === Page.CV) return "sketch";
-    if (page === Page.CONTACT) return "glitch";
-  }, [page]);
+    if (page === Page.CONTACT) return CONTACT_EFFECTS[contactEffectIndex];
+  }, [page, contactEffectIndex]);
 
   return (
     <div className="relative flex h-full w-full items-center justify-center p-4">

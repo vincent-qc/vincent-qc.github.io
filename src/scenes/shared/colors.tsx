@@ -1,5 +1,5 @@
 const GATES_BLACK = "#2F2F2F";
-const GLASS_BLUE = "#106070";
+const GLASS_BLUE = "#50A0B0";
 const GRASS_GREEN = "#10F040";
 
 export { GATES_BLACK, GLASS_BLUE, GRASS_GREEN };

@@ -13,6 +13,7 @@ export const SketchShader = {
     uResolution: { value: new THREE.Vector2(1, 1) },
     uThreshold: { value: 0.15 },
     uLineWidth: { value: 1.0 },
+    uMinNeighbors: { value: 1.0 },
   },
   vertexShader: commonVert,
   fragmentShader: sketchFrag,
@@ -21,11 +22,13 @@ export const SketchShader = {
 export function SketchPostProcessing({
   enabled,
   threshold = 0.15,
-  lineWidth = 1.0,
+  lineWidth = 0.5,
+  minNeighbors = 5.0,
 }: {
   enabled: boolean;
   threshold?: number;
   lineWidth?: number;
+  minNeighbors?: number;
 }) {
   const { gl, scene, camera, size } = useThree();
 
@@ -39,10 +42,20 @@ export function SketchPostProcessing({
     sketchPass.uniforms.uResolution.value.set(size.width, size.height);
     sketchPass.uniforms.uThreshold.value = threshold;
     sketchPass.uniforms.uLineWidth.value = lineWidth;
+    sketchPass.uniforms.uMinNeighbors.value = minNeighbors;
     composer.addPass(sketchPass);
 
     return composer;
-  }, [gl, scene, camera, size.width, size.height, threshold, lineWidth]);
+  }, [
+    gl,
+    scene,
+    camera,
+    size.width,
+    size.height,
+    threshold,
+    lineWidth,
+    minNeighbors,
+  ]);
 
   useEffect(() => {
     composer.setSize(size.width, size.height);
