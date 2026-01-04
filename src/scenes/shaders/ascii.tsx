@@ -1,6 +1,6 @@
 import * as THREE from "three";
-import asciiFrag from "./ascii.frag?raw";
-import commonVert from "./common.vert?raw";
+import asciiFrag from "../../assets/shaders/ascii.frag?raw";
+import commonVert from "../../assets/shaders/common.vert?raw";
 
 export const AsciiShader = {
   uniforms: {
@@ -11,4 +11,3 @@ export const AsciiShader = {
   vertexShader: commonVert,
   fragmentShader: asciiFrag,
 };
-

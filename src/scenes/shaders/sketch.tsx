@@ -1,6 +1,6 @@
 import * as THREE from "three";
-import commonVert from "./common.vert?raw";
-import sketchFrag from "./sketch.frag?raw";
+import commonVert from "../../assets/shaders/common.vert?raw";
+import sketchFrag from "../../assets/shaders/sketch.frag?raw";
 
 export const SketchShader = {
   uniforms: {
@@ -12,4 +12,3 @@ export const SketchShader = {
   vertexShader: commonVert,
   fragmentShader: sketchFrag,
 };
-

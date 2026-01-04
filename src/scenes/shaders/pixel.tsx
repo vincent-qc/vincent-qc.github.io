@@ -1,6 +1,6 @@
 import * as THREE from "three";
-import commonVert from "./common.vert?raw";
-import pixelFrag from "./pixel.frag?raw";
+import commonVert from "../../assets/shaders/common.vert?raw";
+import pixelFrag from "../../assets/shaders/pixel.frag?raw";
 
 export const PixelShader = {
   uniforms: {
@@ -11,4 +11,3 @@ export const PixelShader = {
   vertexShader: commonVert,
   fragmentShader: pixelFrag,
 };
-
