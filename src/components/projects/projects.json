@@ -1,8 +1,8 @@
 [
   {
-    "name": "EduBeyond",
+    "name": "EduBeyond (now Futurity)",
     "description": "AI EdTech startup building on LLM powered Learning Management Systems",
-    "link": "https://edubeyond.ai",
+    "link": "https://futurity.work",
     "image": "/projects/edubeyond.png",
     "tags": {
       "languages": ["typescript", "python"],
