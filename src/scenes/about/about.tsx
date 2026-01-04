@@ -3,7 +3,6 @@ import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { FloorBase, GrassBase } from "./base";
 import OrganizedDeskMesh from "./desk/desk";
-import DuckMesh from "./duck/duck";
 import FlagMesh from "./flag/flag";
 import GatesMesh from "./gates/gates";
 import HammerschlagMesh from "./hammerschlag/hammerschlag";
@@ -44,11 +43,11 @@ export default function AboutScene() {
           rotation={Math.PI / 2}
         />
         <FlagMesh scale={[0.225, 0.225, 0.225]} position={[-11, 8, 4]} />
-        <DuckMesh
+        {/* <DuckMesh
           scale={[0.4, 0.4, 0.4]}
           position={[-3.5, 0.9, 7.8]}
           rotation={-Math.PI / 8}
-        />
+        /> */}
       </GrassBase>
       <FloorBase>
         <GatesMesh scale={[0.15, 0.15, 0.15]} position={[-7, 8.3, -7]} />

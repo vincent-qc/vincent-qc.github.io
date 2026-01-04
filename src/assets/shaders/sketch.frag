@@ -29,7 +29,7 @@ void main() {
   
   // Use a gentler smoothstep that preserves both light and dark edges
   // Lower the minimum threshold to catch more edges, but still filter noise
-  float minThreshold = uThreshold * 0.2;
+  float minThreshold = uThreshold * 0.6;
   float maxThreshold = uThreshold * 1.0;
   edge = smoothstep(minThreshold, maxThreshold, edge);
   
@@ -39,4 +39,3 @@ void main() {
   
   gl_FragColor = vec4(vec3(edge), edge);
 }
-
