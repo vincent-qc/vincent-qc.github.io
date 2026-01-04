@@ -1,30 +1,32 @@
 import { useFrame, useThree } from "@react-three/fiber";
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import * as THREE from "three";
 import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
 import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
 import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass.js";
-import coloredAsciiFrag from "../assets/shaders/colored-ascii.frag?raw";
 import commonVert from "../assets/shaders/common.vert?raw";
+import glitchFrag from "../assets/shaders/glitch.frag?raw";
 
-export const ColoredAsciiShader = {
+export const GlitchShader = {
   uniforms: {
     tDiffuse: { value: null },
     uResolution: { value: new THREE.Vector2(1, 1) },
-    uCharSize: { value: 4.0 },
+    uIntensity: { value: 0.5 },
+    uTime: { value: 0.0 },
   },
   vertexShader: commonVert,
-  fragmentShader: coloredAsciiFrag,
+  fragmentShader: glitchFrag,
 };
 
-export function ColoredAsciiPostProcessing({
+export function GlitchPostProcessing({
   enabled,
-  charSize = 4.0,
+  intensity = 0.5,
 }: {
   enabled: boolean;
-  charSize?: number;
+  intensity?: number;
 }) {
   const { gl, scene, camera, size } = useThree();
+  const timeRef = useRef(0);
 
   const composer = useMemo(() => {
     const composer = new EffectComposer(gl);
@@ -32,25 +34,34 @@ export function ColoredAsciiPostProcessing({
     renderPass.clearAlpha = 0;
     composer.addPass(renderPass);
 
-    const coloredAsciiPass = new ShaderPass(ColoredAsciiShader);
-    coloredAsciiPass.uniforms.uResolution.value.set(size.width, size.height);
-    coloredAsciiPass.uniforms.uCharSize.value = charSize;
-    composer.addPass(coloredAsciiPass);
+    const glitchPass = new ShaderPass(GlitchShader);
+    glitchPass.uniforms.uResolution.value.set(size.width, size.height);
+    glitchPass.uniforms.uIntensity.value = intensity;
+    composer.addPass(glitchPass);
 
     return composer;
-  }, [gl, scene, camera, size.width, size.height, charSize]);
+  }, [gl, scene, camera, size.width, size.height, intensity]);
 
   useEffect(() => {
     composer.setSize(size.width, size.height);
-    const coloredAsciiPass = composer.passes[1] as ShaderPass;
-    if (coloredAsciiPass?.uniforms?.uResolution) {
-      coloredAsciiPass.uniforms.uResolution.value.set(size.width, size.height);
+    const glitchPass = composer.passes[1] as ShaderPass;
+    if (glitchPass?.uniforms?.uResolution) {
+      glitchPass.uniforms.uResolution.value.set(size.width, size.height);
     }
-  }, [composer, size]);
+    if (glitchPass?.uniforms?.uIntensity) {
+      glitchPass.uniforms.uIntensity.value = intensity;
+    }
+  }, [composer, size, intensity]);
 
   useFrame(
-    () => {
+    (_state, delta) => {
       if (enabled) {
+        timeRef.current += delta;
+        const glitchPass = composer.passes[1] as ShaderPass;
+        if (glitchPass?.uniforms?.uTime) {
+          glitchPass.uniforms.uTime.value = timeRef.current;
+        }
+
         gl.autoClear = false;
         gl.clear();
         composer.render();

@@ -3,7 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import { Suspense, useMemo } from "react";
 import { useUnitSize } from "../hooks/useWindowSize";
 import { AsciiPostProcessing } from "../shaders/ascii";
-import { ColoredAsciiPostProcessing } from "../shaders/pixel";
+import { GlitchPostProcessing } from "../shaders/pixel";
 import { SketchPostProcessing } from "../shaders/sketch";
 import { Page, usePageStore } from "../stores/page.store";
 import AboutScene from "./about/about";
@@ -16,7 +16,7 @@ function Scene() {
     if (page === Page.ABOUT) return "normal";
     if (page === Page.PROJECTS) return "ascii";
     if (page === Page.CV) return "sketch";
-    if (page === Page.CONTACT) return "colored-ascii";
+    if (page === Page.CONTACT) return "glitch";
   }, [page]);
 
   return (
@@ -45,10 +45,7 @@ function Scene() {
           lineWidth={1.0}
         />
         <AsciiPostProcessing enabled={effect === "ascii"} charSize={4.0} />
-        <ColoredAsciiPostProcessing
-          enabled={effect === "colored-ascii"}
-          charSize={4.0}
-        />
+        <GlitchPostProcessing enabled={effect === "glitch"} intensity={0.6} />
 
         {/* Lighting */}
         <ambientLight intensity={0.6} />
